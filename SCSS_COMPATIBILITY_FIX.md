@@ -11,6 +11,7 @@ The build was failing due to **incompatible Sass syntax** in the SCSS files:
 3. **`color.channel()`** - Complex color function causing build failure
 
 ### **Error Location:**
+
 - **File**: `_sass/_variables.scss` and `_sass/_themes.scss`
 - **Lines**: Around 591-598
 - **Error**: "Build script returned non-zero exit code: 2"
@@ -18,6 +19,7 @@ The build was failing due to **incompatible Sass syntax** in the SCSS files:
 ## Solution Applied
 
 ### **1. Fixed `_variables.scss`:**
+
 ```scss
 // ❌ Before (incompatible):
 @use "sass:color";
@@ -32,6 +34,7 @@ $grey-color-light: lighten($grey-color, 40%);
 ```
 
 ### **2. Fixed `_themes.scss`:**
+
 ```scss
 // ❌ Before (incompatible):
 @use "sass:color";
@@ -55,14 +58,15 @@ $grey-color-light: lighten($grey-color, 40%);
 
 ## Functions Replaced
 
-| Modern Function | Traditional Function | Purpose |
-|----------------|---------------------|---------|
-| `color.adjust($color, $lightness: X%)` | `lighten($color, X%)` | Lighten colors |
+| Modern Function                             | Traditional Function   | Purpose              |
+| ------------------------------------------- | ---------------------- | -------------------- |
+| `color.adjust($color, $lightness: X%)`      | `lighten($color, X%)`  | Lighten colors       |
 | `color.channel($color, "red", $space: rgb)` | `rgba(0, 0, 0, alpha)` | Generate rgba values |
 
 ## Expected Result
 
 The build should now succeed because:
+
 - ✅ **All modern Sass syntax** has been replaced
 - ✅ **Traditional color functions** are used throughout
 - ✅ **SCSS compilation** will work without errors
@@ -71,7 +75,8 @@ The build should now succeed because:
 ## Note
 
 The color values are functionally equivalent:
+
 - **Light theme**: `rgba(0, 0, 0, 0.4)` = black with 40% opacity
 - **Dark theme**: `rgba(255, 255, 255, 0.5)` = white with 50% opacity
 
-**Ready for deployment! 🚀** 
+**Ready for deployment! 🚀**

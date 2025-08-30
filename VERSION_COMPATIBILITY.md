@@ -5,32 +5,36 @@
 Your Jekyll site deployment was failing due to **version compatibility conflicts** between different components:
 
 ### 1. **Bundler Version Conflict** (Latest Issue)
+
 - **Error**: Bundler 2.6.9 requires Ruby 3.1.0+
 - **Problem**: Netlify was using Ruby 2.7.2
 - **Solution**: Upgraded to Ruby 3.1.0 + Bundler 2.4.0
 
 ### 2. **Jekyll Version Conflict** (Previous Issue)
+
 - **Error**: Jekyll 4.3.2 requires Ruby 3.0.0+ and nokogiri 1.16.2+
 - **Problem**: Ruby 2.7.5 was incompatible
 - **Solution**: Upgraded to Jekyll 4.2.0 + Ruby 3.1.0
 
 ## Current Compatible Configuration
 
-| Component | Version | Why This Version? |
-|-----------|---------|-------------------|
-| **Ruby** | 3.1.0 | Meets Bundler 2.6.9 requirements |
-| **Jekyll** | 4.2.0 | Compatible with Ruby 3.1.0 |
-| **Bundler** | 2.6.9 | Compatible with Ruby 3.1.0 and available on Netlify |
-| **nokogiri** | Auto | Will auto-resolve to compatible version |
+| Component    | Version | Why This Version?                                   |
+| ------------ | ------- | --------------------------------------------------- |
+| **Ruby**     | 3.1.0   | Meets Bundler 2.6.9 requirements                    |
+| **Jekyll**   | 4.2.0   | Compatible with Ruby 3.1.0                          |
+| **Bundler**  | 2.6.9   | Compatible with Ruby 3.1.0 and available on Netlify |
+| **nokogiri** | Auto    | Will auto-resolve to compatible version             |
 
 ## Version Compatibility Matrix
 
 ### Ruby 3.1.0 ✅
+
 - **Jekyll**: 4.0.0 - 4.3.x ✅
 - **Bundler**: 2.4.0 - 2.6.x ✅ (Using 2.6.9 for Netlify compatibility)
 - **nokogiri**: 1.16.0+ ✅
 
 ### Ruby 2.7.x ❌
+
 - **Jekyll**: Only 3.9.x and below ❌
 - **Bundler**: Only 2.3.x and below ❌
 - **nokogiri**: Limited compatibility ❌
@@ -52,6 +56,7 @@ Your Jekyll site deployment was failing due to **version compatibility conflicts
 ## Next Deployment
 
 Your site should now deploy successfully on Netlify because:
+
 1. **Ruby version** is compatible with Bundler requirements
 2. **Jekyll version** is compatible with Ruby version
 3. **All dependencies** will resolve automatically
@@ -66,4 +71,4 @@ If you still encounter issues:
 3. **Ensure all files** are committed and pushed
 4. **Clear Netlify cache** if needed
 
-The version compatibility issues have been resolved! 🎉 
+The version compatibility issues have been resolved! 🎉

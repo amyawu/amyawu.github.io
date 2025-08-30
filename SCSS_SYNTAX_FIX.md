@@ -5,27 +5,15 @@
 The build was failing due to a **malformed `@import` statement** in `assets/css/main.scss`:
 
 ### **Before (Broken):**
+
 ```scss
-@import
-  "variables",
-  "themes",
-  "layout",
-  "base",
-  "distill",
-  "cv",
-  "tabs",
-  "typograms",
-  "font-awesome/fontawesome",
-  "font-awesome/brands",
-  "font-awesome/solid",
-  "font-awesome/regular",
-  "tabler-icons/tabler-icons.scss",
-  "tabler-icons/tabler-icons-filled.scss",
-  "tabler-icons/tabler-icons-outline.scss"
-;
+@import "variables", "themes", "layout", "base", "distill", "cv", "tabs", "typograms", "font-awesome/fontawesome", "font-awesome/brands",
+  "font-awesome/solid", "font-awesome/regular", "tabler-icons/tabler-icons.scss", "tabler-icons/tabler-icons-filled.scss",
+  "tabler-icons/tabler-icons-outline.scss";
 ```
 
 ### **Issues:**
+
 - ❌ **Missing semicolons** after each import
 - ❌ **Incomplete import syntax** causing SCSS compilation failure
 - ❌ **Build process** couldn't process the SCSS files
@@ -33,6 +21,7 @@ The build was failing due to a **malformed `@import` statement** in `assets/css/
 ## Solution Applied
 
 ### **After (Fixed):**
+
 ```scss
 @import "variables";
 @import "themes";
@@ -52,6 +41,7 @@ The build was failing due to a **malformed `@import` statement** in `assets/css/
 ```
 
 ### **What Was Fixed:**
+
 - ✅ **Added semicolons** after each import statement
 - ✅ **Proper SCSS import syntax** for each file
 - ✅ **Complete import list** with correct formatting
@@ -66,6 +56,7 @@ The build was failing due to a **malformed `@import` statement** in `assets/css/
 ## Expected Result
 
 The build should now succeed because:
+
 - ✅ **SCSS syntax** is correct
 - ✅ **All imports** are properly formatted
 - ✅ **CSS compilation** will work without errors
@@ -74,9 +65,10 @@ The build should now succeed because:
 ## Note About Linter Errors
 
 The linter may show errors for:
+
 - **Jekyll front matter** (`---` at top of file)
 - **Template variables** (`{{ site.max_width }}`)
 
 These are **expected and normal** for Jekyll SCSS files and won't affect the build.
 
-**Ready for deployment! 🚀** 
+**Ready for deployment! 🚀**
