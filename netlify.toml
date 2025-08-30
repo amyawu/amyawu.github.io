@@ -4,24 +4,26 @@
 
 [build.environment]
   JEKYLL_ENV = "production"
-  JEKYLL_VERSION = "4.3.2"
+  JEKYLL_VERSION = "4.2.0"
+  RUBY_VERSION = "3.1.0"
+  BUNDLER_VERSION = "2.6.9"
 
-[[plugins]]
-  package = "@netlify/plugin-jekyll"
+# [[plugins]]
+#   package = "@netlify/plugin-jekyll"
 
-[build.processing]
-  skip_processing = false
+# [build.processing]
+#   skip_processing = false
 
-[build.processing.css]
-  bundle = true
-  minify = true
+# [build.processing.css]
+#   bundle = true
+#   minify = true
 
-[build.processing.js]
-  bundle = true
-  minify = true
+# [build.processing.js]
+#   bundle = true
+#   minify = true
 
-[build.processing.html]
-  pretty_urls = true
+# [build.processing.html]
+#   pretty_urls = true
 
-[build.processing.images]
-  compress = true 
+# [build.processing.images]
+#   compress = true 
