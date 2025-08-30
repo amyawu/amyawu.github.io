@@ -27,6 +27,16 @@
 - **Solution**: Simplified `netlify.toml` to use native Netlify build
 - **Status**: RESOLVED
 
+### 6. ✅ **SCSS Syntax Error**
+- **Problem**: Malformed `@import` statements in `main.scss` causing build failure
+- **Solution**: Fixed import syntax with proper semicolons and formatting
+- **Status**: RESOLVED
+
+### 7. ✅ **SCSS Compatibility Issue**
+- **Problem**: Modern Sass functions (`color.adjust`, `color.channel`) not supported
+- **Solution**: Replaced with traditional color functions (`lighten`, `rgba`)
+- **Status**: RESOLVED
+
 ## Current Configuration
 
 | Setting | Value | Purpose |
