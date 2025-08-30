@@ -16,13 +16,13 @@
 - **Publish directory**: `_site`
 - **Jekyll version**: 4.2.0
 - **Ruby version**: 3.1.0
-- **Bundler version**: 2.4.0
+- **Bundler version**: 2.6.9
 
 ## Compatibility Fixes Applied
 
 - **Jekyll Version**: Upgraded to 4.2.0 for Ruby 3.1.0 compatibility
 - **Ruby Version**: Set to 3.1.0 to meet Bundler 2.6.9 requirements
-- **Bundler Version**: Specified 2.4.0 for compatibility
+- **Bundler Version**: Specified 2.6.9 for compatibility (available on Netlify)
 - **Dependencies**: Removed webrick gem (not needed for Jekyll 4.x)
 
 ## Next Steps

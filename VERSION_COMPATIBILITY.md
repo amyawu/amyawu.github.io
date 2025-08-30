@@ -20,14 +20,14 @@ Your Jekyll site deployment was failing due to **version compatibility conflicts
 |-----------|---------|-------------------|
 | **Ruby** | 3.1.0 | Meets Bundler 2.6.9 requirements |
 | **Jekyll** | 4.2.0 | Compatible with Ruby 3.1.0 |
-| **Bundler** | 2.4.0 | Compatible with Ruby 3.1.0 |
+| **Bundler** | 2.6.9 | Compatible with Ruby 3.1.0 and available on Netlify |
 | **nokogiri** | Auto | Will auto-resolve to compatible version |
 
 ## Version Compatibility Matrix
 
 ### Ruby 3.1.0 ✅
 - **Jekyll**: 4.0.0 - 4.3.x ✅
-- **Bundler**: 2.4.0 - 2.6.x ✅
+- **Bundler**: 2.4.0 - 2.6.x ✅ (Using 2.6.9 for Netlify compatibility)
 - **nokogiri**: 1.16.0+ ✅
 
 ### Ruby 2.7.x ❌
