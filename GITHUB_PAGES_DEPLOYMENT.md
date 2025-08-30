@@ -14,7 +14,7 @@ Your site has been reconfigured from **Netlify deployment** to **GitHub Pages de
 - `url: https://amyawu.github.io`
 - `baseurl: ""` (empty for root domain)
 - GitHub Actions workflow for automatic deployment
-- Automatic deployment on every push to main branch
+- Automatic deployment on every push to master branch
 
 ## Configuration Changes Made
 
@@ -27,7 +27,7 @@ Your site has been reconfigured from **Netlify deployment** to **GitHub Pages de
 2. **Created GitHub Actions workflow** (`.github/workflows/deploy.yml`):
    - Automatically builds your Jekyll site
    - Deploys to GitHub Pages
-   - Runs on every push to main branch
+   - Runs on every push to master branch
 
 3. **Added `.nojekyll` file:**
    - Tells GitHub Pages not to process with Jekyll
@@ -35,7 +35,7 @@ Your site has been reconfigured from **Netlify deployment** to **GitHub Pages de
 
 ## How GitHub Pages Deployment Works
 
-1. **Push to main branch** → Triggers GitHub Actions workflow
+1. **Push to master branch** → Triggers GitHub Actions workflow
 2. **Workflow builds site** → Uses Jekyll to generate `_site/` directory
 3. **Site deployed** → Automatically published to `https://amyawu.github.io`
 4. **No manual steps** → Deployment happens automatically
