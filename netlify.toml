@@ -4,7 +4,7 @@
 
 [build.environment]
   JEKYLL_ENV = "production"
-  JEKYLL_VERSION = "4.3.2"
+  JEKYLL_VERSION = "3.9.0"
 
 [[plugins]]
   package = "@netlify/plugin-jekyll"

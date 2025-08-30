@@ -14,7 +14,14 @@
 
 - **Build command**: `bundle exec jekyll build`
 - **Publish directory**: `_site`
-- **Jekyll version**: 4.3.2
+- **Jekyll version**: 3.9.0
+- **Ruby version**: 2.7.5
+
+## Compatibility Fixes Applied
+
+- **Jekyll Version**: Downgraded to 3.9.0 for Ruby 2.7.5 compatibility
+- **Ruby Version**: Set to 2.7.5 to avoid nokogiri gem conflicts
+- **Dependencies**: Added webrick gem for Jekyll 3.9.0 compatibility
 
 ## Next Steps
 

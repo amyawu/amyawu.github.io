@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'jekyll'
+gem 'jekyll', '~> 3.9.0'
 
 # Core plugins that directly affect site building
 group :jekyll_plugins do
@@ -34,5 +34,5 @@ group :other_plugins do
     gem 'ostruct'        # used by jekyll-twitter-plugin
     # gem 'terser'         # used by jekyll-terser
     # gem 'unicode_utils' -- should be already installed by jekyll
-    # gem 'webrick' -- should be already installed by jekyll
+    gem 'webrick'  # required for Jekyll 3.9.0 on Ruby 2.7+
 end
