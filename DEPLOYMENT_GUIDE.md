@@ -2,7 +2,8 @@
 
 ## Configuration Changes Made
 
-1. **URL Settings**: 
+1. **URL Settings**:
+
    - `url: ""` (empty for Netlify)
    - `baseurl: ""` (empty for root domain deployment)
 
@@ -28,6 +29,7 @@
 ## Next Steps
 
 1. Commit these changes:
+
    ```bash
    git add .
    git commit -m "Configure for Netlify deployment"
@@ -49,6 +51,7 @@
 ## Simplified Netlify Configuration
 
 The `netlify.toml` file is now simplified and contains only essential build settings:
+
 - **No external plugins** required (removes dependency issues)
 - **Basic build configuration** that Netlify can handle natively
-- **Version specifications** for Ruby, Jekyll, and Bundler 
+- **Version specifications** for Ruby, Jekyll, and Bundler

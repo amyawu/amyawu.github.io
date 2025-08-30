@@ -3,6 +3,7 @@
 ## Problem Identified
 
 The build was failing because:
+
 - **Required**: Bundler 2.4.0
 - **Available on Netlify**: Bundler 2.6.9 and 2.3.3
 - **Result**: Version mismatch causing build failure
@@ -10,11 +11,13 @@ The build was failing because:
 ## Solution Applied
 
 Changed `netlify.toml` from:
+
 ```toml
 BUNDLER_VERSION = "2.4.0"
 ```
 
 To:
+
 ```toml
 BUNDLER_VERSION = "2.6.9"
 ```
@@ -28,15 +31,16 @@ BUNDLER_VERSION = "2.6.9"
 ## Current Configuration
 
 - **Ruby**: 3.1.0
-- **Jekyll**: 4.2.0  
+- **Jekyll**: 4.2.0
 - **Bundler**: 2.6.9 (available on Netlify)
 - **All versions**: Compatible with each other
 
 ## Expected Result
 
 The build should now succeed because:
+
 - ✅ **Bundler version** is available on Netlify
 - ✅ **All dependencies** are compatible
 - ✅ **No more version conflicts**
 
-**Ready for deployment! 🚀** 
+**Ready for deployment! 🚀**
