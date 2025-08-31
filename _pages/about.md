@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: CS graduate in HCI/AI from the <a href='https://www.ufl.edu/'>University of Florida</a> 
+subtitle: CS graduate in HCI/AI from the <a href='https://www.ufl.edu/'>University of Florida</a>
 
 profile:
   align: right
@@ -27,17 +27,18 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I recently received my B.S. with Honors in Computer Science and a minors in Digital Arts and Sciences from the University of Florida. 
+I recently received my B.S. with Honors in Computer Science and a minors in Digital Arts and Sciences from the University of Florida.
 
-I was previously and respectively advised by the amazing [Dr. Jeremy A. Magruder Waisome](https://www.jeremywaisome.com/) and [Dr. Christan Grant](https://ceg.me/) in [UF PRISEM Lab](https://faculty.eng.ufl.edu/prisem/) and [UF Data Studio](https://ufdatastudio.com/). 
+I was previously and respectively advised by the amazing [Dr. Jeremy A. Magruder Waisome](https://www.jeremywaisome.com/) and [Dr. Christan Grant](https://ceg.me/) in [UF PRISEM Lab](https://faculty.eng.ufl.edu/prisem/) and [UF Data Studio](https://ufdatastudio.com/).
 
 Throughout my undergraduate years, I have had the wonderful opportunity to work alongside:
-* [Dr. Yue Li](https://uk.linkedin.com/in/yue-li-502727133) and [Dr. Aikaterini Vriza](https://www.linkedin.com/in/katerina-vriza) at [ANL](https://www.anl.gov/) [DOE SULI](https://science.osti.gov/wdts/suli) 
-* [Dr. Vishal Misra](https://www.linkedin.com/in/vishalmisra) at [CU-Amazon SURE](https://www.engineering.columbia.edu/about/news/igniting-future-engineers-summer-research-and-professional-development)
-* [Dr. Stefan Schiffer](https://kbsg.rwth-aachen.de/~schiffer/) at [RWTH Aachen University UROP International](https://www.rwth-aachen.de/cms/root/studium/im-studium/angebote-fuer-studierende/urop/~wmy/urop-international/?lidx=1)
-* [Dr. Alberto Quattrini Li](https://rlab.cs.dartmouth.edu/albertoq/) at [Dartmouth College vASURE](https://graduate.dartmouth.edu/diversity/research-and-education/asure) & [Leadership Alliance SR-EIP](https://theleadershipalliance.org/summer-research-early-identification-program)  
 
-Although my primary areas are in `Human-Computer Interaction (HCI)` and `Artificial Intelligence (AI)`, I am currently **open** to exploring **all opportunities**. 
+- [Dr. Yue Li](https://uk.linkedin.com/in/yue-li-502727133) and [Dr. Aikaterini Vriza](https://www.linkedin.com/in/katerina-vriza) at [ANL](https://www.anl.gov/) [DOE SULI](https://science.osti.gov/wdts/suli)
+- [Dr. Vishal Misra](https://www.linkedin.com/in/vishalmisra) at [CU-Amazon SURE](https://www.engineering.columbia.edu/about/news/igniting-future-engineers-summer-research-and-professional-development)
+- [Dr. Stefan Schiffer](https://kbsg.rwth-aachen.de/~schiffer/) at [RWTH Aachen University UROP International](https://www.rwth-aachen.de/cms/root/studium/im-studium/angebote-fuer-studierende/urop/~wmy/urop-international/?lidx=1)
+- [Dr. Alberto Quattrini Li](https://rlab.cs.dartmouth.edu/albertoq/) at [Dartmouth College vASURE](https://graduate.dartmouth.edu/diversity/research-and-education/asure) & [Leadership Alliance SR-EIP](https://theleadershipalliance.org/summer-research-early-identification-program)
+
+Although my primary areas are in `Human-Computer Interaction (HCI)` and `Artificial Intelligence (AI)`, I am currently **open** to exploring **all opportunities**.
 
 My past research interests were also in `Machine Learning`, `Computer Vision`, `Natural Language Processing`, `Computational Material Science`, and `Data Science`.
 
