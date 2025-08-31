@@ -29,7 +29,7 @@ latest_posts:
 
 I recently received my B.S. with Honors in Computer Science and a minors in Digital Arts and Sciences from the University of Florida.
 
-I was previously and respectively advised by the amazing [Dr. Jeremy A. Magruder Waisome](https://www.jeremywaisome.com/) and [Dr. Christan Grant](https://ceg.me/) in [UF PRISEM Lab](https://faculty.eng.ufl.edu/prisem/) and [UF Data Studio](https://ufdatastudio.com/).
+I was respectively advised by [Dr. Jeremy A. Magruder Waisome](https://www.jeremywaisome.com/) and [Dr. Christan Grant](https://ceg.me/) in [UF PRISEM Lab](https://faculty.eng.ufl.edu/prisem/) and [UF Data Studio](https://ufdatastudio.com/).
 
 Throughout my undergraduate years, I have had the wonderful opportunity to work alongside:
 
