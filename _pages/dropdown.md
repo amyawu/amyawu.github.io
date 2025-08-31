@@ -3,6 +3,7 @@ layout: page
 title: submenus
 nav: false
 nav_order: 8
+search: false
 dropdown: true
 children:
   - title: bookshelf
