@@ -6,7 +6,7 @@ subtitle: CS graduate in HCI/AI from the <a href='https://www.ufl.edu/'>Universi
 
 profile:
   align: right
-  image: Amy_Wu.jpg
+  image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Feel free to reach out!</p>
