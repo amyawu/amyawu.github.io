@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Presented at NSF ID4 Symposium! :sparkles:
+Presented at NSF ID4 Symposium :sparkles:

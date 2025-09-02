@@ -5,7 +5,7 @@ inline: true
 related_posts: false
 ---
 
-Wrapped up my internship at Argonne National Laboratory! :microscope:
+Wrapped up my internship at Argonne National Laboratory :microscope:
 
 <!-- ---
 layout: post

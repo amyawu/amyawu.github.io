@@ -5,7 +5,7 @@ inline: true
 related_posts: false
 ---
 
-Graduated with my B.S. in Computer Science! :smile:
+Graduated with my B.S. in Computer Science :smile:
 
 <!-- ---
 layout: post
