@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "nav-teaching",
           title: "teaching",
-          description: "Materials for courses you taught. Replace this text with your description.",
+          description: "Taught Information and Databases Systems 1, Engineering Design and Society, Research Fundamentals",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
@@ -432,13 +432,13 @@ ninja.data = [{
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
             },},{id: "news-graduated-with-my-b-s-in-computer-science-smile",
-          title: 'Graduated with my B.S. in Computer Science! :smile:',
+          title: 'Graduated with my B.S. in Computer Science :smile:',
           description: "",
           section: "News",},{id: "news-wrapped-up-my-internship-at-argonne-national-laboratory-microscope",
-          title: 'Wrapped up my internship at Argonne National Laboratory! :microscope:',
+          title: 'Wrapped up my internship at Argonne National Laboratory :microscope:',
           description: "",
           section: "News",},{id: "news-presented-at-nsf-id4-symposium-sparkles",
-          title: 'Presented at NSF ID4 Symposium! :sparkles:',
+          title: 'Presented at NSF ID4 Symposium :sparkles:',
           description: "",
           section: "News",},{id: "projects-project-10",
           title: 'project 10',
