@@ -431,16 +431,14 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
+            },},{id: "news-graduated-with-my-b-s-in-computer-science-smile",
+          title: 'Graduated with my B.S. in Computer Science! :smile:',
           description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
+          section: "News",},{id: "news-wrapped-up-my-internship-at-argonne-national-laboratory-microscope",
+          title: 'Wrapped up my internship at Argonne National Laboratory! :microscope:',
           description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+          section: "News",},{id: "news-presented-at-nsf-id4-symposium-sparkles",
+          title: 'Presented at NSF ID4 Symposium! :sparkles:',
           description: "",
           section: "News",},{id: "projects-project-10",
           title: 'project 10',
@@ -493,11 +491,11 @@ ninja.data = [{
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
             },},{
-        id: 'social-email',
-        title: 'email',
+        id: 'social-linkedin',
+        title: 'LinkedIn',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%61%6D%79%77%75%31%35%37%30@%6F%75%74%6C%6F%6F%6B.%63%6F%6D", "_blank");
+          window.open("https://www.linkedin.com/in/amyawu", "_blank");
         },
       },{
       id: 'light-theme',
