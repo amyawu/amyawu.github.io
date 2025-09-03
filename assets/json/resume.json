@@ -19,7 +19,7 @@
       "endDate": "2025-05-05"
     }
   ],
-  "research experience": [
+  "research": [
     {
       "name": "Department of Energy (DOE) Summer Undergraduate Laboratory Internship (SULI)",
       "position": "Research Intern",
@@ -48,7 +48,18 @@
       "highlights": ["Computer Vision, STEM Education, Artificial Intelligence (AI)"]
     }
   ],
-  "professional experience": [
+  "experience": [
+    {
+      "name": "Department of Energy (DOE) Summer Undergraduate Laboratory Internship (SULI)",
+      "position": "Research Intern",
+      "url": "https://amyawu.github.io",
+      "startDate": "2025-05-27",
+      "endDate": "2025-08-01",
+      "summary": "Selected specific chalcogenides from Materials Project database. Visualized the data through featurization techniques for UMAPs. Analyzed machine learning models with featurization techniques to conduct magnetic property prediction.",
+      "highlights": ["Computational Material Science, Machine Learning (ML)"]
+    }
+  ],
+  "outreach": [
     {
       "organization": "People's Climate March",
       "location": "Zurich, Switzerland",
@@ -67,50 +78,6 @@
       "awarder": "Royal Swedish Academy of Sciences",
       "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
       "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-location-dot"
-    },
-    {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
-    },
-    {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
-    },
-    {
-      "name": "Quantum Communication",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-calendar"
-    },
-    {
-      "name": "Quantum Teleportation",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-clipboard-check"
     }
   ],
   "publications": [
@@ -149,18 +116,6 @@
         "Quantum Communication",
         "Quantum Teleportation"
       ]
-    }
-  ],
-  "languages": [
-    {
-      "language": "German",
-      "fluency": "Native speaker",
-      "icon": ""
-    },
-    {
-      "language": "English",
-      "fluency": "Fluent",
-      "icon": ""
     }
   ],
   "interests": [
