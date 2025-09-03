@@ -4,12 +4,12 @@
 
 :root {
   color-scheme: light;
-  --global-bg-color: #c4ffe6;
-  --global-code-bg-color: #002213;
+  --global-bg-color: #d1ffec;
+  --global-code-bg-color: #004a2a;
   --global-text-color: #{$black-color};
   --global-text-color-light: #{$grey-color};
   --global-theme-color: #00bc6d;
-  --global-hover-color: #69ffc0;
+  --global-hover-color: #4cf3ad;
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-dark};
   --global-footer-text-color: #{$grey-color-light};
@@ -71,12 +71,12 @@
 
 html[data-theme="dark"] {
   color-scheme: dark;
-  --global-bg-color: #2b183c;
-  --global-code-bg-color: #4d0988;
+  --global-bg-color: #3c183a;
+  --global-code-bg-color: #88097d;
   --global-text-color: #{$grey-color-light};
   --global-text-color-light: #{$grey-color};
-  --global-theme-color: #8700f6;
-  --global-hover-color: #6e00cf;
+  --global-theme-color: #f600f6;
+  --global-hover-color: #cf00be;
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-light};
   --global-footer-text-color: #{$grey-color-dark};
