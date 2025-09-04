@@ -7,7 +7,7 @@
   --global-bg-color: #f4fffa;
   --global-code-bg-color: #62ffc0;
   --global-text-color: #{$black-color};
-  --global-text-color-light: #{$grey-color};
+  --global-text-color-light: #00a762;
   --global-theme-color: #00a762;
   --global-hover-color: #00d67d;
   --global-hover-text-color: #{$white-color};
@@ -74,7 +74,7 @@ html[data-theme="dark"] {
   --global-bg-color: #3c183a;
   --global-code-bg-color: #88097da9;
   --global-text-color: #{$grey-color-light};
-  --global-text-color-light: #{$grey-color};
+  --global-text-color-light: #f600f6;
   --global-theme-color: #f600f6;
   --global-hover-color: #cf00be;
   --global-hover-text-color: #{$white-color};
