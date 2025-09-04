@@ -102,7 +102,7 @@
                   {%- else -%}
                     {%- assign url = p.url -%}
                   {%- endif %}
-                  
+
                   {%- if p.title == 'cv' and p.cv_pdf -%}
                     <a class="nav-link" href="{{ p.cv_pdf | prepend: 'assets/pdf/' | relative_url }}" target="_blank" rel="noopener noreferrer">
                       {{- p.title -}}
@@ -115,7 +115,7 @@
                       {% endif %}
                     </a>
                   {%- endif -%}
-                  </li>
+                </li>
               {% endif %}
             {% endif %}
           {% endfor %}
