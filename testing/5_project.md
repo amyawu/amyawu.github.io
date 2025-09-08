@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
+title: Photography (1J1J)
+description: a project with a background image
+img: assets/img/1.jpg
 importance: 3
 category: fun
 ---
