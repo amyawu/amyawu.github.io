@@ -37,7 +37,7 @@ Throughout my undergraduate years, I have had the wonderful opportunity to work 
 - [Dr. Vishal Misra](https://www.linkedin.com/in/vishalmisra) at [CU-Amazon SURE](https://www.engineering.columbia.edu/about/news/igniting-future-engineers-summer-research-and-professional-development)
 - [Dr. Stefan Schiffer](https://kbsg.rwth-aachen.de/~schiffer/) at [RWTH Aachen University UROP International](https://www.rwth-aachen.de/cms/root/studium/im-studium/angebote-fuer-studierende/urop/~wmy/urop-international/?lidx=1)
 - [Dr. Alberto Quattrini Li](https://rlab.cs.dartmouth.edu/albertoq/) at [Dartmouth College vASURE](https://graduate.dartmouth.edu/diversity/research-and-education/asure) & [Leadership Alliance SR-EIP](https://theleadershipalliance.org/summer-research-early-identification-program)
-- [Dr. Jeremiah Blanchard](https://www.linkedin.com/in/jeremiahblanchard) under [UF USP](https://cur.aa.ufl.edu/programs-university-scholars-program/)
+- [Dr. Jeremiah Blanchard](https://www.linkedin.com/in/jeremiahblanchard) under [UF USP](https://cur.aa.ufl.edu/programs-university-scholars-program/) and [UF ESP](https://cur.aa.ufl.edu/emerging-scholars-program/)
 
 Although my primary areas are in `Human-Computer Interaction (HCI)` and `Artificial Intelligence (AI)`, I am currently **open** to exploring **all opportunities**.
 
