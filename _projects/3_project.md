@@ -14,7 +14,7 @@ category: work
   <div class="col-md-4">
     <h5>What, Where, How It All Began</h5>
     <p>
-      It was very nice to understand more about how other STEM and non-STEM classes see programming fnudamentals through this project in Dr. Jeremiah Blanchard's Engaging Learning Lab (May 2022 - May 2023). <br>
+      It was very nice to understand more about how STEM and non-STEM classes see programming fnudamentals through this project in Dr. Jeremiah Blanchard's Engaging Learning Lab (May 2022 - May 2023). <br>
     </p>
     <h5>Contributors and Collaborators</h5>
     <p>
