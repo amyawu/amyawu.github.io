@@ -2,7 +2,7 @@
 layout: page
 title: GUTSS
 description: 2023-2025
-img: assets/img/sharkliver1.jpg
+img: assets/img/sharkjpg_small.jpg
 importance: 1
 # redirect: https://ufdatastudio.com/posts/2023-08-19-sharkai-blog/
 category: work
