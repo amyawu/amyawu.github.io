@@ -16,4 +16,4 @@ I am grateful for the chance to assist in teaching:
 - `Introduction to Research Fundamentals` (through [STEPUP](https://www.eng.ufl.edu/undergraduate/programs-and-partnerships/student-transition-and-retention/stepup-summer-bridge-program/) 2021) with [Dr. Regina Rodriguez](https://www.linkedin.com/in/regina-rodriguez-phd)
   - I supervised a group of `first-year engineering undergraduates` in their `first research experience` before their first semester in college.
   - Students learned more about `professional and academic skills` like how to do a `literature review` and how to present a `poster` at the end of the program.
-  - Their work is published in UF's [Journal of Undergraduate Research (JUR)](https://cur.aa.ufl.edu/jur/).
+  - Their work (Applications of Nanotechnology in Cancer Treatment) was submitted to [International Journal of Student Project Reporting (IJSPR)](https://cur.aa.ufl.edu/jur/).
