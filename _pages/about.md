@@ -39,7 +39,7 @@ Throughout my undergraduate years, I have had the wonderful opportunity to work 
 - [Dr. Alberto Quattrini Li](https://rlab.cs.dartmouth.edu/albertoq/) at [Dartmouth College vASURE](https://graduate.dartmouth.edu/diversity/research-and-education/asure) & [Leadership Alliance SR-EIP](https://theleadershipalliance.org/summer-research-early-identification-program)
 - [Dr. Jeremiah Blanchard](https://www.linkedin.com/in/jeremiahblanchard) under [UF USP](https://cur.aa.ufl.edu/programs-university-scholars-program/) and [UF ESP](https://cur.aa.ufl.edu/emerging-scholars-program/)
 
-Although my primary areas are in `Human-Computer Interaction (HCI)` and `Artificial Intelligence (AI)`, I am currently **open** to exploring **all opportunities**.
+Although my primary areas are in `Human-Computer Interaction (HCI)`, `Artificial Intelligence (AI)`, and `Computing Education`, I am currently **open** to exploring **all opportunities**.
 
 My past research interests were also in `Machine Learning`, `Computer Vision`, `Natural Language Processing`, `Computational Material Science`, and `Data Science`.
 
