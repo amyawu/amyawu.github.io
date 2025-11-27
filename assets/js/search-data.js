@@ -456,7 +456,22 @@ ninja.data = [{
           title: 'Prompt Analysis1',
           description: "2022",
           section: "Projects",handler: () => {
+              window.location.href = "/projects/11_project/";
+            },},{id: "projects-prompt-analysis1",
+          title: 'Prompt Analysis1',
+          description: "2022",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/12_project/";
+            },},{id: "projects-prompt-analysis1",
+          title: 'Prompt Analysis1',
+          description: "2022",
+          section: "Projects",handler: () => {
               window.location.href = "/projects/13_project/";
+            },},{id: "projects-prompt-analysis1",
+          title: 'Prompt Analysis1',
+          description: "2022",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/14_project/";
             },},{id: "projects-gutss",
           title: 'GUTSS',
           description: "2023-2025",
@@ -482,6 +497,11 @@ ninja.data = [{
           description: "2023",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
+            },},{id: "projects-prompt-analysis1",
+          title: 'Prompt Analysis1',
+          description: "2022",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/9_project/";
             },},{
         id: 'social-linkedin',
         title: 'LinkedIn',
