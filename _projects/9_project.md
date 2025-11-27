@@ -251,52 +251,81 @@ category: fun
   opacity: 1;
 }
 
-/* Modal Styles */
+/* --- Modal/Popup Styles (UPDATED FOR DARK MODE) --- */
 .modal {
   display: none;
   position: fixed;
   z-index: 9999;
   left: 0; top: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.9);
+  /* Darken the background behind the modal */
+  background-color: rgba(0, 0, 0, 0.85); 
   overflow-y: auto;
+  backdrop-filter: blur(5px); /* Adds a nice blur effect behind modal */
 }
+
 .modal-content {
   margin: 5% auto;
-  padding: 20px;
+  padding: 30px;
   width: 90%;
   max-width: 1200px;
   text-align: center;
-  color: white;
+  border-radius: 8px;
+  
+  /* THIS IS THE FIX: Use Theme Variables */
+  background-color: var(--global-bg-color, #ffffff); 
+  color: var(--global-text-color, #333333);
+  border: 1px solid var(--global-divider-color, #ddd);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
+
+/* The Close 'X' Button */
 .close {
   position: absolute;
-  top: 20px; right: 35px;
-  color: #f1f1f1;
+  top: 15px; right: 25px;
+  /* Make sure the X matches the text color */
+  color: var(--global-text-color, #333333);
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+  z-index: 10001;
 }
+
+.close:hover {
+  opacity: 0.7;
+}
+
+/* Side-by-side comparison */
 .comparison-row {
   display: flex;
   gap: 20px;
   margin-top: 20px;
   justify-content: center;
 }
+
 .img-box {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
+
 .img-box img {
   width: 100%;
   border-radius: 4px;
+  border: 1px solid var(--global-divider-color, #ddd);
 }
+
 .label {
-  margin-bottom: 5px;
-  color: #aaa;
+  margin-bottom: 8px;
+  font-weight: bold;
   font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* Ensure label text adapts to dark mode */
+  color: var(--global-text-color, #555);
 }
+
+/* Mobile: Stack images instead of side-by-side */
 @media (max-width: 768px) {
   .instagram-grid { grid-template-columns: repeat(2, 1fr); }
   .comparison-row { flex-direction: column; }
