@@ -4,7 +4,7 @@ title: Prompt Analysis1
 description: 2022
 img: assets/img/squirrel1_small.jpg
 importance: 5
-category: work
+category: fun
 ---
 
 <div class="row">
