@@ -456,7 +456,7 @@ ninja.data = [{
           title: 'Prompt Analysis1',
           description: "2022",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/12_project/";
+              window.location.href = "/projects/13_project/";
             },},{id: "projects-gutss",
           title: 'GUTSS',
           description: "2023-2025",
