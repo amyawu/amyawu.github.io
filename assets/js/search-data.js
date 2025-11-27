@@ -444,8 +444,11 @@ ninja.data = [{
           section: "News",},{id: "news-wrapped-up-my-internship-at-argonne-national-laboratory-microscope",
           title: 'Wrapped up my internship at Argonne National Laboratory :microscope:',
           description: "",
-          section: "News",},{id: "news-presented-at-nsf-id4-symposium-sparkles",
-          title: 'Presented at NSF ID4 Symposium :sparkles:',
+          section: "News",},{id: "news-presented-at-northwestern-university-s-nsf-id4-symposium-sparkles",
+          title: 'Presented at Northwestern University’s NSF ID4 Symposium :sparkles:',
+          description: "",
+          section: "News",},{id: "news-accepted-a-spring-2026-internship-at-berkeley-lab-party",
+          title: 'Accepted a Spring 2026 internship at Berkeley Lab! :party:',
           description: "",
           section: "News",},{id: "projects-prompt-analysis",
           title: 'Prompt Analysis',
@@ -484,7 +487,7 @@ ninja.data = [{
               window.location.href = "/projects/8_project/";
             },},{id: "projects-photography",
           title: 'Photography',
-          description: "2022",
+          description: "Edits &amp; Retouching",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
             },},{
