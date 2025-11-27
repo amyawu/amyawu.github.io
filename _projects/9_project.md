@@ -5,6 +5,7 @@ description: "Candids & Edits (Hover + Click)"
 img: assets/img/squirrel1_small.jpg
 importance: 5
 category: fun
+permalink: /projects/photography/
 ---
 
 <div class="instagram-grid">
