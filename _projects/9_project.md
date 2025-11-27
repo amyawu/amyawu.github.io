@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Photography
-description: "Edits & Retouching"
+description: "Candids & Edits (Hover + Click)"
 img: assets/img/squirrel1_small.jpg
 importance: 5
 category: fun
