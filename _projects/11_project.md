@@ -2,7 +2,7 @@
 layout: page
 title: Photography
 description: "Candids & Edits (Hover + Click)"
-img: assets/img/squirrel1_small.jpg
+img: assets/img/squirreleating_small.jpg
 importance: 5
 category: fun
 permalink: /projects/photography/
