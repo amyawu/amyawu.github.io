@@ -487,7 +487,7 @@ ninja.data = [{
               window.location.href = "/projects/8_project/";
             },},{id: "projects-photography",
           title: 'Photography',
-          description: "Edits &amp; Retouching",
+          description: "Candids + Edits (Hover &amp; Click!)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
             },},{
