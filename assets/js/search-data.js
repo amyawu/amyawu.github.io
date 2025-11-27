@@ -477,6 +477,11 @@ ninja.data = [{
           description: "2023",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
+            },},{id: "projects-prompt-analysis1",
+          title: 'Prompt Analysis1',
+          description: "2022",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/9_project/";
             },},{
         id: 'social-linkedin',
         title: 'LinkedIn',
