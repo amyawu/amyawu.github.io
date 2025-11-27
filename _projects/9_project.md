@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Photography
-description: "Edits & Retouching"
+description: "Candids + Edits (Hover & Click!)"
 img: assets/img/squirrel1_small.jpg
 importance: 5
 category: fun
@@ -11,22 +11,173 @@ category: fun
 
   <div class="instagram-item" 
        onclick="openModal(this)"
-       data-title="Squirrel Retouch"
-       data-desc="Removed distracting leaves and color graded for warmth."
-       data-after="/assets/img/squirrel1_small.jpg" 
-       data-before="https://placekitten.com/800/800"> <img src="/assets/img/squirrel1_small.jpg" alt="Squirrel">
-    <div class="icon-overlay">🔍 Compare</div>
+       data-title="Biker"
+       data-desc="Walking through NYC."
+       data-after="/assets/img/biker2.jpg" 
+       data-after="/assets/img/biker1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
   </div>
 
   <div class="instagram-item" 
        onclick="openModal(this)"
-       data-title="Portrait Cleanup"
-       data-desc="Skin texture cleanup and eye sharpening."
-       data-after="https://placekitten.com/801/801"
-       data-before="https://placekitten.com/802/802">
-       
-    <img src="https://placekitten.com/801/801" alt="Portrait">
-    <div class="icon-overlay">🔍 Compare</div>
+       data-title="Sun"
+       data-desc="Manhattanhenge."
+       data-after="/assets/img/sun2.jpg" 
+       data-after="/assets/img/sun1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="Lake"
+       data-desc="Lake on a Window Screen saver."
+       data-after="/assets/img/lake2.jpg" 
+       data-after="/assets/img/lake1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="Mountain"
+       data-desc="Mountain at Sunset."
+       data-after="/assets/img/mountain2.jpg" 
+       data-after="/assets/img/mountain1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="Blossoms"
+       data-desc="Cherry Blossoms in Spring."
+       data-after="/assets/img/cherry2.jpg" 
+       data-after="/assets/img/cherry1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="Entrance"
+       data-desc="Japanese Garden Park Entrance."
+       data-after="/assets/img/shrine2.jpg" 
+       data-after="/assets/img/shrine1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="Sequoia"
+       data-desc="Looking up to Trees."
+       data-after="/assets/img/forest2.jpg" 
+       data-after="/assets/img/forest1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="City"
+       data-desc="NYC City Skyline at Sunset."
+       data-after="/assets/img/city2.jpg" 
+       data-after="/assets/img/city1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="Window"
+       data-desc="NYC through Windows."
+       data-after="/assets/img/window2.jpg" 
+       data-after="/assets/img/window1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="Sidewalk"
+       data-desc="NYC Sidewalk at Night."
+       data-after="/assets/img/sidewalk2.jpg" 
+       data-after="/assets/img/sidewalk1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="Bird"
+       data-desc="Bird over Beach."
+       data-after="/assets/img/bird2.jpg" 
+       data-after="/assets/img/bird1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="Beach #1"
+       data-desc="Beach with Sun on the Side."
+       data-after="/assets/img/beach2.jpg" 
+       data-after="/assets/img/beach1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="Beach #2"
+       data-desc="Ocean with Sun in the Middle."
+       data-after="/assets/img/ocean2.jpg" 
+       data-after="/assets/img/ocean1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="Birds"
+       data-desc="Birds in Sky."
+       data-after="/assets/img/birds2.jpg" 
+       data-after="/assets/img/birds1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="Person"
+       data-desc="Person at the Shore."
+       data-after="/assets/img/dude2.jpg" 
+       data-after="/assets/img/dude1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="Airplane"
+       data-desc="Airplane in the Sky."
+       data-after="/assets/img/neon2.jpg" 
+       data-after="/assets/img/neon1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="Airplane"
+       data-desc="Airplane in the Sky."
+       data-after="/assets/img/neon2.jpg" 
+       data-after="/assets/img/neon1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="Butterfly"
+       data-desc="Butterfly on Marigold."
+       data-after="/assets/img/butterfly2.jpg" 
+       data-after="/assets/img/butterfly1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
+  </div>
+
+  <div class="instagram-item" 
+       onclick="openModal(this)"
+       data-title="On Air"
+       data-desc="Sunset on Air."
+       data-after="/assets/img/burn2.jpg" 
+       data-after="/assets/img/burn1.jpg" 
+    <div class="icon-overlay">🔍 Before/After</div>
   </div>
 
   </div>
