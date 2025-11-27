@@ -454,42 +454,37 @@ ninja.data = [{
           title: 'Prompt Analysis',
           description: "2022",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/10_project/";
-            },},{id: "projects-prompt-analysis1",
-          title: 'Prompt Analysis1',
-          description: "2022",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/11_project/";
-            },},{id: "projects-gutss",
-          title: 'GUTSS',
-          description: "2023-2025",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-lithoreality",
-          title: 'LithoReality',
-          description: "2023-2024",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-cs-dungeon",
-          title: 'CS Dungeon',
-          description: "2022-2023",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-tokenprobe",
-          title: 'TokenProbe',
-          description: "2024",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
-            },},{id: "projects-mixtec-codices",
-          title: 'Mixtec Codices',
-          description: "2023",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
+              window.location.href = "/projects/promptanalysis/";
             },},{id: "projects-photography",
           title: 'Photography',
           description: "Candids &amp; Edits (Hover + Click)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/photography/";
+            },},{id: "projects-gutss",
+          title: 'GUTSS',
+          description: "2023-2025",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/GUTSS/";
+            },},{id: "projects-lithoreality",
+          title: 'LithoReality',
+          description: "2023-2024",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/lithoreality/";
+            },},{id: "projects-cs-dungeon",
+          title: 'CS Dungeon',
+          description: "2022-2023",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/csdungeon/";
+            },},{id: "projects-tokenprobe",
+          title: 'TokenProbe',
+          description: "2024",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/tokenprobe/";
+            },},{id: "projects-mixtec-codices",
+          title: 'Mixtec Codices',
+          description: "2023",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/mixteccodices/";
             },},{
         id: 'social-linkedin',
         title: 'LinkedIn',
