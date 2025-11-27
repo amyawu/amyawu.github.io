@@ -6,6 +6,7 @@ img: assets/img/mixtec_small.png
 importance: 2
 category: work
 giscus_comments: true
+permalink: /projects/mixteccodices/
 ---
 
 <div class="row">

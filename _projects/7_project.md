@@ -6,6 +6,7 @@ img: assets/img/tokenprobeoutput1.jpg
 importance: 1
 category: work
 related_publications: true
+permalink: /projects/tokenprobe/
 ---
 
 <div class="row">

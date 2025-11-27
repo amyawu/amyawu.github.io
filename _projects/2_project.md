@@ -6,6 +6,7 @@ img: assets/img/cleanroom1.jpg
 importance: 2
 category: work
 giscus_comments: true
+permalink: /projects/lithoreality/
 ---
 
 <div class="row">

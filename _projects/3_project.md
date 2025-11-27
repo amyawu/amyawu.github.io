@@ -5,6 +5,7 @@ description: 2022-2023
 img: assets/img/squirrel2_small.jpg
 importance: 3
 category: work
+permalink: /projects/csdungeon/
 ---
 
 <div class="row">

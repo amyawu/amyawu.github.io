@@ -7,6 +7,7 @@ importance: 1
 # redirect: https://ufdatastudio.com/posts/2023-08-19-sharkai-blog/
 category: work
 related_publications: false
+permalink: /projects/GUTSS/
 ---
 
 <div class="row">
