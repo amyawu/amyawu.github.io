@@ -1,24 +1,70 @@
 ---
 layout: page
-title: Prompt Analysis1
+title: Photography
 description: 2022
 img: assets/img/squirrel1_small.jpg
 importance: 5
 category: fun
 ---
 
-<div class="row">
-  <div class="col-md-8">
-    <iframe src="/assets/pdf/promptanalysis.pdf" width="100%" height="800px" frameborder="0"></iframe>
+<div class="instagram-grid">
+
+  <div class="instagram-item">
+    <img src="{{ '/assets/img/squirrel1_small.jpg' | relative_url }}" alt="Squirrel">
   </div>
-  <div class="col-md-4">
-    <h5>What, Where, How It All Began</h5>
-    <p>
-      It was fun learning more about how students reflect in the classroom in Dr. Cheryl Resch's Engaging Learning Lab (January 2021 - May 2022)! <br>
-    </p>
-    <h5>Contributors and Collaborators</h5>
-    <p>
-      Cheryl Resch, Patriel Stapleton, Benjamin Rheault, Amy Wu, and Christina Gardner-McCune
-    </p>
+
+  <div class="instagram-item">
+    <img src="{{ '/assets/img/your_next_photo.jpg' | relative_url }}" alt="Photo 2">
   </div>
+  
+  <div class="instagram-item">
+    <img src="https://placekitten.com/800/800" alt="Placeholder">
+  </div>
+
+   <div class="instagram-item">
+    <img src="https://placekitten.com/801/801" alt="Placeholder">
+  </div>
+
 </div>
+
+<style>
+.instagram-grid {
+  display: grid;
+  /* This creates 3 equal columns */
+  grid-template-columns: repeat(3, 1fr);
+  /* The gap between photos (Instagram uses about 3-5px) */
+  gap: 4px; 
+  padding-bottom: 50px;
+}
+
+.instagram-item {
+  position: relative;
+  width: 100%;
+  /* This forces the box to be a perfect square */
+  aspect-ratio: 1 / 1; 
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.instagram-item img {
+  width: 100%;
+  height: 100%;
+  /* This ensures the image covers the square without squishing/stretching */
+  object-fit: cover; 
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+/* Hover Effect: slight zoom */
+.instagram-item:hover img {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Mobile responsiveness: switch to 2 columns on small screens */
+@media (max-width: 768px) {
+  .instagram-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
