@@ -482,8 +482,8 @@ ninja.data = [{
           description: "2023",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
-            },},{id: "projects-prompt-analysis1",
-          title: 'Prompt Analysis1',
+            },},{id: "projects-photography",
+          title: 'Photography',
           description: "2022",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
