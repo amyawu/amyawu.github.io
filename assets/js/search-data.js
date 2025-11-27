@@ -489,7 +489,7 @@ ninja.data = [{
           title: 'Photography',
           description: "Candids &amp; Edits (Hover + Click)",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
+              window.location.href = "/projects/photography/";
             },},{
         id: 'social-linkedin',
         title: 'LinkedIn',
