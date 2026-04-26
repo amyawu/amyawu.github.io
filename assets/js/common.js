@@ -62,20 +62,20 @@ $(document).ready(function () {
 
 const BUNNY_SPRITE_MAP = {
   nora: {
-    active: "/_sprites/nora.gif",
-    idle: "/_sprites/nora_idle.gif",
+    active: "/assets/sprites/nora.gif",
+    idle: "/assets/sprites/nora_idle.gif",
   },
   sunny: {
-    active: "/_sprites/sunny.gif",
-    idle: "/_sprites/sunny_idle.gif",
+    active: "/assets/sprites/sunny.gif",
+    idle: "/assets/sprites/sunny_idle.gif",
   },
   pyro: {
-    active: "/_sprites/pyro.gif",
-    idle: "/_sprites/pyro_idle.gif",
+    active: "/assets/sprites/pyro.gif",
+    idle: "/assets/sprites/pyro_idle.gif",
   },
   aqua: {
-    active: "/_sprites/aqua.gif",
-    idle: "/_sprites/aqua_idle.gif",
+    active: "/assets/sprites/aqua.gif",
+    idle: "/assets/sprites/aqua_idle.gif",
   },
 };
 
