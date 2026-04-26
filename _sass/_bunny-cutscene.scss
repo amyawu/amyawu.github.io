@@ -145,7 +145,6 @@
   background-size: var(--bunny-sheet-width) var(--bunny-sheet-height);
   image-rendering: pixelated;
   will-change: background-position;
-  animation: bunnyCompanionSpriteLoop 0.75s steps(6) infinite;
 }
 
 .bunny-cutscene-skip {
@@ -208,7 +207,6 @@
   background-size: var(--bunny-sheet-width) var(--bunny-sheet-height);
   image-rendering: pixelated;
   will-change: background-position;
-  animation: bunnyCompanionSpriteLoop 0.75s steps(6) infinite;
 }
 
 .bunny-companion-sprite.is-fallback {
@@ -243,15 +241,6 @@
   100% {
     transform: scale(0.9) rotate(0deg);
     opacity: 0.25;
-  }
-}
-
-@keyframes bunnyCompanionSpriteLoop {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: calc(-1 * var(--bunny-sheet-width)) 0;
   }
 }
 
