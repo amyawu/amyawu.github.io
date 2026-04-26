@@ -3,6 +3,11 @@
 }
 
 .bunny-cutscene-overlay {
+  --bunny-frame-size: 128px;
+  --bunny-frame-count: 6;
+}
+
+.bunny-cutscene-overlay {
   position: fixed;
   inset: 0;
   z-index: 1200;
@@ -51,7 +56,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-  min-height: 190px;
+  min-height: 280px;
   padding: 1rem;
   border: 3px solid #ffffff;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
@@ -113,9 +118,17 @@
   letter-spacing: 0.02em;
 }
 
+.bunny-cutscene-card-tip {
+  display: block;
+  margin-top: auto;
+  line-height: 1.45;
+  font-size: 0.5rem;
+  color: #b3e5fc;
+}
+
 .bunny-cutscene-card-sprite {
-  width: 58px;
-  height: 58px;
+  width: var(--bunny-frame-size);
+  height: var(--bunny-frame-size);
   display: inline-flex;
   border: 3px solid #ffffff;
   background-color: rgba(0, 0, 0, 0.35);
@@ -124,13 +137,10 @@
 }
 
 .bunny-cutscene-card-sprite.is-animated {
-  --sprite-frame-width: 58px;
-  --sprite-frame-height: 58px;
-  --sprite-frames: 6;
   background-image: var(--bunny-sprite-url);
   background-repeat: no-repeat;
   background-position: 0 0;
-  background-size: calc(var(--sprite-frame-width) * var(--sprite-frames)) var(--sprite-frame-height);
+  background-size: calc(var(--bunny-frame-size) * var(--bunny-frame-count)) var(--bunny-frame-size);
   animation: bunnyCompanionSpriteLoop 0.75s steps(6) infinite;
 }
 
@@ -165,7 +175,7 @@
   align-items: flex-end;
   gap: 0.65rem;
   width: calc(100vw - 1.8rem);
-  max-width: 360px;
+  max-width: 460px;
   padding: 0.65rem;
   border: 3px solid #ffffff;
   box-shadow: 0 0 0 3px #171717;
@@ -175,8 +185,8 @@
 }
 
 .bunny-companion-sprite {
-  width: 58px;
-  height: 58px;
+  width: var(--bunny-frame-size);
+  height: var(--bunny-frame-size);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -188,13 +198,10 @@
 }
 
 .bunny-companion-sprite.is-animated {
-  --sprite-frame-width: 58px;
-  --sprite-frame-height: 58px;
-  --sprite-frames: 6;
   background-image: var(--bunny-sprite-url);
   background-repeat: no-repeat;
   background-position: 0 0;
-  background-size: calc(var(--sprite-frame-width) * var(--sprite-frames)) var(--sprite-frame-height);
+  background-size: calc(var(--bunny-frame-size) * var(--bunny-frame-count)) var(--bunny-frame-size);
   animation: bunnyCompanionSpriteLoop 0.75s steps(6) infinite;
 }
 
@@ -211,7 +218,7 @@
   flex-direction: column;
   gap: 0.55rem;
   line-height: 1.4;
-  font-size: 0.5rem;
+  font-size: 0.48rem;
 }
 
 .bunny-companion-name {
@@ -238,11 +245,15 @@
     background-position-x: 0;
   }
   to {
-    background-position-x: calc(-58px * 6);
+    background-position-x: calc(-1 * var(--bunny-frame-size) * var(--bunny-frame-count));
   }
 }
 
 @media (max-width: 860px) {
+  .bunny-cutscene-overlay {
+    --bunny-frame-size: 96px;
+  }
+
   .bunny-cutscene-panel {
     padding: 1.25rem 1rem 3.75rem;
   }
@@ -252,6 +263,6 @@
   }
 
   .bunny-cutscene-card {
-    min-height: 165px;
+    min-height: 240px;
   }
 }
