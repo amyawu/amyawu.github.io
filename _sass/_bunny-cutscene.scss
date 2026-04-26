@@ -113,6 +113,27 @@
   letter-spacing: 0.02em;
 }
 
+.bunny-cutscene-card-sprite {
+  width: 58px;
+  height: 58px;
+  display: inline-flex;
+  border: 3px solid #ffffff;
+  background-color: rgba(0, 0, 0, 0.35);
+  image-rendering: pixelated;
+  overflow: hidden;
+}
+
+.bunny-cutscene-card-sprite.is-animated {
+  --sprite-frame-width: 58px;
+  --sprite-frame-height: 58px;
+  --sprite-frames: 6;
+  background-image: var(--bunny-sprite-url);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: calc(var(--sprite-frame-width) * var(--sprite-frames)) var(--sprite-frame-height);
+  animation: bunnyCompanionSpriteLoop 0.75s steps(6) infinite;
+}
+
 .bunny-cutscene-skip {
   position: absolute;
   right: 1rem;

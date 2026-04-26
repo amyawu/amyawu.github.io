@@ -61,10 +61,10 @@ $(document).ready(function () {
 });
 
 const BUNNY_SPRITE_MAP = {
-  nora: "/_sprites/nora.png",
-  sunny: "/_sprites/sunny.png",
-  pyro: "/_sprites/pyro.png",
-  aqua: "/_sprites/aqua.png",
+  nora: "/assets/img/sprites/nora.png",
+  sunny: "/assets/img/sprites/sunny.png",
+  pyro: "/assets/img/sprites/pyro.png",
+  aqua: "/assets/img/sprites/aqua.png",
 };
 
 function initBunnyCutscene() {
