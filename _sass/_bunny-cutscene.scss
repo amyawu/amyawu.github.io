@@ -269,6 +269,13 @@
     color 130ms steps(2);
 }
 
+.bunny-companion-dialogue-option-link {
+  width: 100%;
+  text-align: left;
+  font-family: "Press Start 2P", monospace;
+  cursor: pointer;
+}
+
 .bunny-companion-dialogue-toggle {
   display: none;
   width: 100%;
@@ -357,6 +364,86 @@
   border-color: var(--global-theme-color);
 }
 
+.bunny-companion-cv-panel {
+  position: fixed;
+  right: 0.9rem;
+  bottom: 4.25rem;
+  z-index: 1000;
+  width: 280px;
+  max-width: calc(100vw - 1.8rem);
+  padding: 0.7rem;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 3px #171717;
+  background: rgba(0, 0, 0, 0.88);
+  color: #ffffff;
+  font-family: "Press Start 2P", monospace;
+}
+
+.bunny-companion-cv-panel-close {
+  display: inline-flex;
+  margin-left: auto;
+  margin-bottom: 0.55rem;
+  border: 2px solid #ffffff;
+  background: #0a0a0a;
+  color: #ffffff;
+  padding: 0.2rem 0.35rem;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.45rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.bunny-companion-cv-panel-close:hover,
+.bunny-companion-cv-panel-close:focus-visible {
+  border-color: var(--global-theme-color);
+  color: #ffffff;
+  background: var(--global-theme-color);
+  outline: none;
+}
+
+.bunny-companion-cv-panel-title {
+  margin: 0 0 0.55rem;
+  font-size: 0.68rem;
+  line-height: 1.3;
+}
+
+.bunny-companion-cv-title-emphasis {
+  color: #0a0a0a;
+  background: #ffe082;
+  border: 1px solid #ffe082;
+  padding: 0.03rem 0.16rem;
+}
+
+.bunny-companion-cv-panel-copy {
+  margin: 0;
+  font-size: 0.5rem;
+  line-height: 1.55;
+}
+
+.bunny-companion-cv-panel-link {
+  color: #0a0a0a;
+  background: #ffe082;
+  border: 1px solid #ffe082;
+  padding: 0.02rem 0.14rem;
+  text-decoration: none;
+}
+
+.bunny-companion-cv-panel-link:hover,
+.bunny-companion-cv-panel-link:focus-visible {
+  color: #ffffff;
+  background: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+  text-decoration: underline;
+  outline: none;
+}
+
+#navbar .nav-link.bunny-nav-cv-highlight {
+  color: #ffffff !important;
+  background: var(--global-theme-color);
+  border: 1px solid var(--global-theme-color);
+  padding: 0.15rem 0.35rem;
+}
+
 @keyframes bunnySparkle {
   0% {
     transform: scale(0.8) rotate(0deg);
@@ -410,5 +497,9 @@
 
   .bunny-companion-dialogue-toggle {
     display: block;
+  }
+
+  .bunny-companion-cv-panel {
+    display: none;
   }
 }

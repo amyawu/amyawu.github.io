@@ -123,6 +123,7 @@ function initBunnyCutscene() {
   let scrollIdleTimeout = null;
   let selectedBunny = null;
   let isMobileDialogueOpen = false;
+  let isCvPanelOpen = false;
 
   const applyDesktopHudPosition = () => {
     if (mobileDialogueQuery.matches) {
@@ -153,12 +154,14 @@ function initBunnyCutscene() {
     if (!selectedBunny) {
       return;
     }
+    setTopNavCvHighlight(isCvPanelOpen && !mobileDialogueQuery.matches);
     renderCompanionHud(
       hud,
       selectedBunny,
       isUserScrolling,
       isMobileDialogueOpen,
-      mobileDialogueQuery.matches
+      mobileDialogueQuery.matches,
+      isCvPanelOpen
     );
     applyDesktopHudPosition();
   };
@@ -232,16 +235,30 @@ function initBunnyCutscene() {
     if (!mobileDialogueQuery.matches) {
       isMobileDialogueOpen = false;
     }
+    if (mobileDialogueQuery.matches) {
+      isCvPanelOpen = false;
+    }
     rerenderHud();
   });
 
   hud.addEventListener("click", (event) => {
     const trigger = event.target.closest(".bunny-companion-dialogue-toggle");
-    if (!trigger || !selectedBunny) {
+    if (trigger && selectedBunny) {
+      isMobileDialogueOpen = !isMobileDialogueOpen;
+      rerenderHud();
       return;
     }
-    isMobileDialogueOpen = !isMobileDialogueOpen;
-    rerenderHud();
+    const desktopDialogueTrigger = event.target.closest(".bunny-companion-dialogue-option-link");
+    if (desktopDialogueTrigger && !mobileDialogueQuery.matches && selectedBunny) {
+      isCvPanelOpen = true;
+      rerenderHud();
+      return;
+    }
+    const closeCvPanelButton = event.target.closest(".bunny-companion-cv-panel-close");
+    if (closeCvPanelButton && selectedBunny) {
+      isCvPanelOpen = false;
+      rerenderHud();
+    }
   });
 
   applyDefaultCardSprites();
@@ -278,6 +295,7 @@ function initBunnyCutscene() {
       localStorage.setItem(selectedBunnyKey, JSON.stringify(bunny));
       selectedBunny = bunny;
       isMobileDialogueOpen = false;
+      isCvPanelOpen = false;
       localStorage.setItem(cutsceneSeenKey, "true");
       rerenderHud();
       hud.classList.remove("bunny-cutscene-hidden");
@@ -313,6 +331,7 @@ function initBunnyCutscene() {
       };
       localStorage.setItem(selectedBunnyKey, JSON.stringify(selectedBunny));
       isMobileDialogueOpen = false;
+      isCvPanelOpen = false;
       rerenderHud();
       hud.classList.remove("bunny-cutscene-hidden");
     }
@@ -352,7 +371,14 @@ function readSelectedBunny(storageKey) {
   }
 }
 
-function renderCompanionHud(hud, bunny, isUserScrolling, isMobileDialogueOpen, isMobileViewport) {
+function renderCompanionHud(
+  hud,
+  bunny,
+  isUserScrolling,
+  isMobileDialogueOpen,
+  isMobileViewport,
+  isCvPanelOpen
+) {
   const bunnyKey = bunny.spriteKey || getBunnyKey(bunny.name || "");
   const spriteUrls = getSpriteUrls(bunnyKey);
   const dialogue = getDialogueConfig(bunnyKey);
@@ -369,6 +395,42 @@ function renderCompanionHud(hud, bunny, isUserScrolling, isMobileDialogueOpen, i
       (isMobileDialogueOpen ? "true" : "false") +
       '">click me for dialogue!</button>'
     : "";
+  const dialogueOptionTwoMarkup = isMobileViewport
+    ? '<span class="bunny-companion-dialogue-option bunny-companion-dialogue-option-link" role="listitem" tabindex="0">' +
+      '<span class="bunny-companion-dialogue-prefix" aria-hidden="true">&gt; </span>' +
+      "Want to know more about Amy's work in " +
+      '<span class="bunny-companion-dialogue-expertise-emphasis">' +
+      escapeHtml(dialogue.expertise) +
+      "</span>" +
+      "? The CV on the top right shows all of Amy's experiences; " +
+      '<a class="bunny-companion-dialogue-link" href="' +
+      escapeHtml(cvHref) +
+      '" target="_blank" rel="noopener noreferrer">' +
+      '<span class="bunny-companion-dialogue-click-here">click here</span>' +
+      "</a>" +
+      " for a shorter version!" +
+      "</span>"
+    : '<button type="button" class="bunny-companion-dialogue-option bunny-companion-dialogue-option-link">' +
+      '<span class="bunny-companion-dialogue-prefix" aria-hidden="true">&gt; </span>' +
+      "Pst, want to know more about Amy's work in " +
+      '<span class="bunny-companion-dialogue-expertise-emphasis">' +
+      escapeHtml(dialogue.expertise) +
+      "</span>" +
+      "? " +
+      '<span class="bunny-companion-dialogue-click-here">Click here</span>' +
+      " for more" +
+      "</button>";
+  const cvPanelMarkup =
+    !isMobileViewport && isCvPanelOpen
+      ? '<aside class="bunny-companion-cv-panel" aria-label="CV details panel">' +
+        '<button type="button" class="bunny-companion-cv-panel-close" aria-label="Close CV panel">x</button>' +
+        '<h3 class="bunny-companion-cv-panel-title"><span class="bunny-companion-cv-title-emphasis">CV</span></h3>' +
+        '<p class="bunny-companion-cv-panel-copy">This CV has all of Amy\'s experiences! ' +
+        '<a class="bunny-companion-cv-panel-link" href="' +
+        escapeHtml(cvHref) +
+        '" target="_blank" rel="noopener noreferrer">Click here</a> for a shorter version!</p>' +
+        "</aside>"
+      : "";
   const spriteClasses = bunnySpriteUrl
     ? "bunny-companion-sprite is-animated"
     : "bunny-companion-sprite is-fallback";
@@ -400,21 +462,9 @@ function renderCompanionHud(hud, bunny, isUserScrolling, isMobileDialogueOpen, i
     '<span class="bunny-companion-dialogue-prefix" aria-hidden="true">&gt; </span>' +
     "Be careful! Ever since Amy is away from this site, it is dangerous out here." +
     "</span>" +
-    '<span class="bunny-companion-dialogue-option bunny-companion-dialogue-option-link" role="listitem" tabindex="0">' +
-    '<span class="bunny-companion-dialogue-prefix" aria-hidden="true">&gt; </span>' +
-    "Want to know more about Amy's work in " +
-    '<span class="bunny-companion-dialogue-expertise-emphasis">' +
-    escapeHtml(dialogue.expertise) +
-    "</span>" +
-    "? The CV on the top right shows all of Amy's experiences; " +
-    '<a class="bunny-companion-dialogue-link" href="' +
-    escapeHtml(cvHref) +
-    '" target="_blank" rel="noopener noreferrer">' +
-    '<span class="bunny-companion-dialogue-click-here">click here</span>' +
-    "</a>" +
-    " for a shorter version!" +
-    "</span>" +
-    "</div>";
+    dialogueOptionTwoMarkup +
+    "</div>" +
+    cvPanelMarkup;
 
 }
 
@@ -446,6 +496,17 @@ function getDialogueConfig(bunnyKey) {
       cvFile: "Amy_Wu_CV_Everything.pdf",
     }
   );
+}
+
+function setTopNavCvHighlight(isActive) {
+  const navLinks = Array.from(document.querySelectorAll("#navbar .nav-link"));
+  navLinks.forEach((link) => {
+    const linkText = (link.textContent || "").trim().toLowerCase();
+    const isCvNavLink = linkText === "cv";
+    if (isCvNavLink) {
+      link.classList.toggle("bunny-nav-cv-highlight", Boolean(isActive));
+    }
+  });
 }
 
 
