@@ -50,6 +50,72 @@
     <!-- Footer -->
     {% include footer.liquid %}
 
+    <div id="bunny-cutscene" class="bunny-cutscene-overlay bunny-cutscene-hidden" aria-hidden="true">
+      <section class="bunny-cutscene-panel" role="dialog" aria-modal="true" aria-labelledby="bunny-cutscene-title">
+        <h2 id="bunny-cutscene-title" class="bunny-cutscene-title">CHOOSE YOUR BUNNY COMPANION:</h2>
+        <div class="bunny-cutscene-grid">
+          <button
+            type="button"
+            class="bunny-cutscene-card"
+            data-bunny-name="Nora"
+            data-bunny-type="Normal"
+            data-bunny-emoji="🐇"
+            aria-label="Select Nora companion"
+          >
+            <span class="bunny-cutscene-card-name">Nora</span>
+            <span class="bunny-cutscene-card-copy">
+              Normal type bunny or is it? Nora enjoys working with everyone and to advocate for deeper impact.
+            </span>
+          </button>
+          <button
+            type="button"
+            class="bunny-cutscene-card"
+            data-bunny-name="Sunny"
+            data-bunny-type="Light"
+            data-bunny-emoji="🌟"
+            aria-label="Select Sunny companion"
+          >
+            <span class="bunny-cutscene-card-name">Sunny</span>
+            <span class="bunny-cutscene-card-copy">
+              Light type bunny. She's a big fan of anything science. Particularly focuses on machine learning and
+              computational modeling. Loves to collaborate with Pyro!
+            </span>
+          </button>
+          <button
+            type="button"
+            class="bunny-cutscene-card"
+            data-bunny-name="Pyro"
+            data-bunny-type="Fire"
+            data-bunny-emoji="🔥"
+            aria-label="Select Pyro companion"
+          >
+            <span class="bunny-cutscene-card-name">Pyro</span>
+            <span class="bunny-cutscene-card-copy">
+              Fire type bunny. He is a delight to be around! Often concentrates on artificial intelligence and language
+              models. Usually seen around Sunny most days.
+            </span>
+          </button>
+          <button
+            type="button"
+            class="bunny-cutscene-card"
+            data-bunny-name="Aqua"
+            data-bunny-type="Water"
+            data-bunny-emoji="💧"
+            aria-label="Select Aqua companion"
+          >
+            <span class="bunny-cutscene-card-name">Aqua</span>
+            <span class="bunny-cutscene-card-copy">
+              Water type bunny. They love to study how humans work! Their work centers on thematic analysis and
+              qualitative coding. Nora is their typical go-to.
+            </span>
+          </button>
+        </div>
+        <button type="button" id="bunny-cutscene-skip" class="bunny-cutscene-skip">Skip</button>
+      </section>
+    </div>
+
+    <div id="bunny-companion-hud" class="bunny-companion-hud bunny-cutscene-hidden" aria-live="polite"></div>
+
     <!-- JavaScripts -->
     {% include scripts.liquid %}
   </body>

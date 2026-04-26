@@ -1,0 +1,234 @@
+.bunny-cutscene-hidden {
+  display: none !important;
+}
+
+.bunny-cutscene-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: rgba(0, 0, 0, 0.84);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  font-family: "Press Start 2P", monospace;
+}
+
+.bunny-cutscene-panel {
+  position: relative;
+  width: min(1080px, 96vw);
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 2rem 2rem 4.25rem;
+  border: 4px solid #f5f5f5;
+  box-shadow:
+    0 0 0 4px #121212,
+    0 0 0 8px #f5f5f5,
+    0 18px 40px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(160deg, #212121 0%, #101010 100%);
+  color: #f8f8f8;
+}
+
+.bunny-cutscene-title {
+  margin: 0 0 1.75rem;
+  text-align: center;
+  line-height: 1.7;
+  font-size: clamp(0.7rem, 1.4vw, 0.95rem);
+  letter-spacing: 0.06em;
+}
+
+.bunny-cutscene-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.bunny-cutscene-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-height: 190px;
+  padding: 1rem;
+  border: 3px solid #ffffff;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+  color: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 160ms steps(4),
+    box-shadow 160ms steps(4),
+    background-color 160ms steps(4);
+  font-family: "Press Start 2P", monospace;
+}
+
+.bunny-cutscene-card:hover,
+.bunny-cutscene-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 3px #ffd54f;
+  background: rgba(255, 213, 79, 0.15);
+  outline: none;
+}
+
+.bunny-cutscene-card.sparkle-active::before,
+.bunny-cutscene-card.sparkle-active::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #fff6bf;
+  box-shadow:
+    0 0 6px #fff6bf,
+    10px 10px 0 -3px #9be7ff,
+    -12px 12px 0 -3px #ffc1f3;
+  animation: bunnySparkle 700ms steps(5) infinite;
+  pointer-events: none;
+}
+
+.bunny-cutscene-card.sparkle-active::before {
+  top: 10px;
+  right: 10px;
+}
+
+.bunny-cutscene-card.sparkle-active::after {
+  bottom: 14px;
+  left: 14px;
+  animation-delay: 180ms;
+}
+
+.bunny-cutscene-card-name {
+  display: block;
+  line-height: 1.5;
+  font-size: 0.72rem;
+  color: #ffe082;
+}
+
+.bunny-cutscene-card-copy {
+  display: block;
+  line-height: 1.6;
+  font-size: 0.56rem;
+  letter-spacing: 0.02em;
+}
+
+.bunny-cutscene-skip {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  border: 3px solid #ffffff;
+  background: #0a0a0a;
+  color: #ffffff;
+  padding: 0.65rem 0.85rem;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.53rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.bunny-cutscene-skip:hover,
+.bunny-cutscene-skip:focus-visible {
+  outline: none;
+  background: #ffffff;
+  color: #0a0a0a;
+}
+
+.bunny-companion-hud {
+  position: fixed;
+  left: 0.9rem;
+  bottom: 0.9rem;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.65rem;
+  max-width: min(360px, calc(100vw - 1.8rem));
+  padding: 0.65rem;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 3px #171717;
+  background: rgba(0, 0, 0, 0.83);
+  color: #ffffff;
+  font-family: "Press Start 2P", monospace;
+}
+
+.bunny-companion-sprite {
+  width: 58px;
+  height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #ffffff;
+  font-size: 1rem;
+  line-height: 1;
+  image-rendering: pixelated;
+  overflow: hidden;
+}
+
+.bunny-companion-sprite.is-animated {
+  --sprite-frame-width: 58px;
+  --sprite-frame-height: 58px;
+  --sprite-frames: 6;
+  background-image: var(--bunny-sprite-url);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: calc(var(--sprite-frame-width) * var(--sprite-frames)) var(--sprite-frame-height);
+  animation: bunnyCompanionSpriteLoop 0.75s steps(6) infinite;
+}
+
+.bunny-companion-sprite.is-fallback {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.09) 0 6px,
+    rgba(255, 255, 255, 0.16) 6px 12px
+  );
+}
+
+.bunny-companion-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  line-height: 1.4;
+  font-size: 0.5rem;
+}
+
+.bunny-companion-name {
+  color: #ffe082;
+}
+
+@keyframes bunnySparkle {
+  0% {
+    transform: scale(0.8) rotate(0deg);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(1.3) rotate(22deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9) rotate(0deg);
+    opacity: 0.25;
+  }
+}
+
+@keyframes bunnyCompanionSpriteLoop {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: calc(-58px * 6);
+  }
+}
+
+@media (max-width: 860px) {
+  .bunny-cutscene-panel {
+    padding: 1.25rem 1rem 3.75rem;
+  }
+
+  .bunny-cutscene-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bunny-cutscene-card {
+    min-height: 165px;
+  }
+}
