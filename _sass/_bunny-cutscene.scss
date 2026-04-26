@@ -77,6 +77,16 @@
   outline: none;
 }
 
+.bunny-cutscene-card.is-selected-confirm {
+  transform: translateY(-2px) scale(1.01);
+  border-color: #ffe082;
+  box-shadow:
+    0 0 0 4px #ffe082,
+    0 0 0 7px rgba(255, 224, 130, 0.35);
+  background: rgba(255, 224, 130, 0.18);
+  animation: bunnySelectConfirm 220ms steps(4) 1;
+}
+
 .bunny-cutscene-card.sparkle-active::before,
 .bunny-cutscene-card.sparkle-active::after {
   content: "";
@@ -236,6 +246,18 @@
   100% {
     transform: scale(0.9) rotate(0deg);
     opacity: 0.25;
+  }
+}
+
+@keyframes bunnySelectConfirm {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.015);
+  }
+  100% {
+    transform: translateY(-2px) scale(1.01);
   }
 }
 

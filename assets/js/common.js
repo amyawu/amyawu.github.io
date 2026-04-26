@@ -61,11 +61,26 @@ $(document).ready(function () {
 });
 
 const BUNNY_SPRITE_MAP = {
-  nora: "/assets/img/sprites/nora.gif",
-  sunny: "/assets/img/sprites/sunny.gif",
-  pyro: "/assets/img/sprites/pyro.gif",
-  aqua: "/assets/img/sprites/aqua.gif",
+  nora: {
+    active: "/_sprites/nora.gif",
+    idle: "/_sprites/nora_idle.gif",
+  },
+  sunny: {
+    active: "/_sprites/sunny.gif",
+    idle: "/_sprites/sunny_idle.gif",
+  },
+  pyro: {
+    active: "/_sprites/pyro.gif",
+    idle: "/_sprites/pyro_idle.gif",
+  },
+  aqua: {
+    active: "/_sprites/aqua.gif",
+    idle: "/_sprites/aqua_idle.gif",
+  },
 };
+
+const SCROLL_IDLE_TIMEOUT_MS = 220;
+const CUTSCENE_SELECTION_FLASH_MS = 220;
 
 function initBunnyCutscene() {
   const cutscene = document.getElementById("bunny-cutscene");
@@ -79,10 +94,15 @@ function initBunnyCutscene() {
 
   const cutsceneSeenKey = "bunnyCutsceneSeen";
   const selectedBunnyKey = "selectedBunny";
+  const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+  let isUserScrolling = false;
+  let scrollIdleTimeout = null;
+  let selectedBunny = null;
 
   const storedBunny = readSelectedBunny(selectedBunnyKey);
   if (storedBunny) {
-    renderCompanionHud(hud, storedBunny);
+    selectedBunny = storedBunny;
+    renderCompanionHud(hud, storedBunny, isUserScrolling);
     hud.classList.remove("bunny-cutscene-hidden");
   }
 
@@ -93,29 +113,93 @@ function initBunnyCutscene() {
     hideCutscene(cutscene);
   }
 
+  const updateHudSpriteForScrollState = () => {
+    if (!selectedBunny) {
+      return;
+    }
+    renderCompanionHud(hud, selectedBunny, isUserScrolling);
+  };
+
+  const updateCutsceneCardSprite = (card, state) => {
+    const sprite = card.querySelector(".bunny-cutscene-card-sprite");
+    if (!sprite) {
+      return;
+    }
+    const bunnyKey = getBunnyKey(card.dataset.bunnyName || "");
+    const spriteUrl = getSpriteUrlForState(bunnyKey, state);
+    if (spriteUrl) {
+      sprite.classList.add("is-animated");
+      sprite.style.setProperty("--bunny-sprite-url", "url('" + spriteUrl + "')");
+    } else {
+      sprite.classList.remove("is-animated");
+      sprite.style.removeProperty("--bunny-sprite-url");
+    }
+  };
+
+  const applyDefaultCardSprites = () => {
+    bunnyCards.forEach((card) => {
+      updateCutsceneCardSprite(card, isTouchDevice ? "active" : "idle");
+    });
+  };
+
+  const onScroll = () => {
+    isUserScrolling = true;
+    updateHudSpriteForScrollState();
+    if (scrollIdleTimeout) {
+      window.clearTimeout(scrollIdleTimeout);
+    }
+    scrollIdleTimeout = window.setTimeout(() => {
+      isUserScrolling = false;
+      updateHudSpriteForScrollState();
+      scrollIdleTimeout = null;
+    }, SCROLL_IDLE_TIMEOUT_MS);
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("wheel", onScroll, { passive: true });
+  window.addEventListener("touchmove", onScroll, { passive: true });
+
+  applyDefaultCardSprites();
+
   bunnyCards.forEach((card) => {
     card.addEventListener("mouseenter", () => card.classList.add("sparkle-active"));
     card.addEventListener("mouseleave", () => card.classList.remove("sparkle-active"));
     card.addEventListener("focus", () => card.classList.add("sparkle-active"));
     card.addEventListener("blur", () => card.classList.remove("sparkle-active"));
 
+    if (!isTouchDevice) {
+      card.addEventListener("mouseenter", () => updateCutsceneCardSprite(card, "active"));
+      card.addEventListener("focus", () => updateCutsceneCardSprite(card, "active"));
+      card.addEventListener("mouseleave", () => updateCutsceneCardSprite(card, "idle"));
+      card.addEventListener("blur", () => updateCutsceneCardSprite(card, "idle"));
+    }
+
     card.addEventListener("click", () => {
       const bunnyName = card.dataset.bunnyName || "Unknown";
       const bunnyKey = getBunnyKey(bunnyName);
+      const spriteUrls = getSpriteUrls(bunnyKey);
       const bunny = {
         name: bunnyName,
         type: card.dataset.bunnyType || "Unknown",
         emoji: card.dataset.bunnyEmoji || "🐰",
         spriteKey: bunnyKey,
-        spriteUrl: BUNNY_SPRITE_MAP[bunnyKey] || "",
+        spriteUrl: spriteUrls.active || "",
+        spriteUrlActive: spriteUrls.active || "",
+        spriteUrlIdle: spriteUrls.idle || "",
         spriteType: "animated",
       };
 
       localStorage.setItem(selectedBunnyKey, JSON.stringify(bunny));
+      selectedBunny = bunny;
       localStorage.setItem(cutsceneSeenKey, "true");
-      renderCompanionHud(hud, bunny);
+      renderCompanionHud(hud, bunny, isUserScrolling);
       hud.classList.remove("bunny-cutscene-hidden");
-      hideCutscene(cutscene);
+      bunnyCards.forEach((bunnyCard) => bunnyCard.classList.remove("is-selected-confirm"));
+      card.classList.add("is-selected-confirm");
+      window.setTimeout(() => {
+        card.classList.remove("is-selected-confirm");
+        hideCutscene(cutscene);
+      }, CUTSCENE_SELECTION_FLASH_MS);
       trackBunnySelection(bunny);
     });
   });
@@ -143,10 +227,13 @@ function readSelectedBunny(storageKey) {
     if (!raw) return null;
     const bunny = JSON.parse(raw);
     const bunnyKey = bunny.spriteKey || getBunnyKey(bunny.name || "");
+    const spriteUrls = getSpriteUrls(bunnyKey);
     return {
       ...bunny,
       spriteKey: bunnyKey,
-      spriteUrl: bunny.spriteUrl || BUNNY_SPRITE_MAP[bunnyKey] || "",
+      spriteUrl: bunny.spriteUrl || spriteUrls.active || "",
+      spriteUrlActive: bunny.spriteUrlActive || spriteUrls.active || "",
+      spriteUrlIdle: bunny.spriteUrlIdle || spriteUrls.idle || "",
       spriteType: bunny.spriteType || "animated",
     };
   } catch (error) {
@@ -154,9 +241,12 @@ function readSelectedBunny(storageKey) {
   }
 }
 
-function renderCompanionHud(hud, bunny) {
+function renderCompanionHud(hud, bunny, isUserScrolling) {
   const bunnyKey = bunny.spriteKey || getBunnyKey(bunny.name || "");
-  const bunnySpriteUrl = bunny.spriteUrl || BUNNY_SPRITE_MAP[bunnyKey] || "";
+  const spriteUrls = getSpriteUrls(bunnyKey);
+  const activeSprite = bunny.spriteUrlActive || bunny.spriteUrl || spriteUrls.active || "";
+  const idleSprite = bunny.spriteUrlIdle || spriteUrls.idle || "";
+  const bunnySpriteUrl = isUserScrolling ? activeSprite : idleSprite;
   const spriteClasses = bunnySpriteUrl
     ? "bunny-companion-sprite is-animated"
     : "bunny-companion-sprite is-fallback";
@@ -179,6 +269,23 @@ function renderCompanionHud(hud, bunny) {
     "</span>" +
     "</span>";
 
+}
+
+function getSpriteUrls(bunnyKey) {
+  return (
+    BUNNY_SPRITE_MAP[bunnyKey] || {
+      active: "",
+      idle: "",
+    }
+  );
+}
+
+function getSpriteUrlForState(bunnyKey, state) {
+  const spriteUrls = getSpriteUrls(bunnyKey);
+  if (state === "idle") {
+    return spriteUrls.idle;
+  }
+  return spriteUrls.active;
 }
 
 function getBunnyKey(name) {
