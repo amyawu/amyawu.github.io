@@ -2,13 +2,6 @@
   display: none !important;
 }
 
-:root {
-  --bunny-frame-size: 128px;
-  --bunny-frame-count: 6;
-  --bunny-sheet-width: 768px;
-  --bunny-sheet-height: 128px;
-}
-
 .bunny-cutscene-overlay {
   position: fixed;
   inset: 0;
@@ -129,22 +122,13 @@
 }
 
 .bunny-cutscene-card-sprite {
-  width: var(--bunny-frame-size);
-  height: var(--bunny-frame-size);
-  display: inline-flex;
+  width: 128px;
+  height: 128px;
+  display: inline-block;
   border: 3px solid #ffffff;
   background-color: rgba(0, 0, 0, 0.35);
   image-rendering: pixelated;
-  overflow: hidden;
-}
-
-.bunny-cutscene-card-sprite.is-animated {
-  background-image: var(--bunny-sprite-url);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: var(--bunny-sheet-width) var(--bunny-sheet-height);
-  image-rendering: pixelated;
-  will-change: background-position;
+  object-fit: contain;
 }
 
 .bunny-cutscene-skip {
@@ -188,28 +172,20 @@
 }
 
 .bunny-companion-sprite {
-  width: var(--bunny-frame-size);
-  height: var(--bunny-frame-size);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  width: 128px;
+  height: 128px;
+  display: inline-block;
   border: 3px solid #ffffff;
-  font-size: 1rem;
-  line-height: 1;
   image-rendering: pixelated;
-  overflow: hidden;
-}
-
-.bunny-companion-sprite.is-animated {
-  background-image: var(--bunny-sprite-url);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: var(--bunny-sheet-width) var(--bunny-sheet-height);
-  image-rendering: pixelated;
-  will-change: background-position;
+  object-fit: contain;
 }
 
 .bunny-companion-sprite.is-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
   background: repeating-linear-gradient(
     45deg,
     rgba(255, 255, 255, 0.09) 0 6px,
@@ -245,12 +221,6 @@
 }
 
 @media (max-width: 860px) {
-  :root {
-    --bunny-frame-size: 96px;
-    --bunny-sheet-width: 576px;
-    --bunny-sheet-height: 96px;
-  }
-
   .bunny-cutscene-panel {
     padding: 1.25rem 1rem 3.75rem;
   }
@@ -261,6 +231,12 @@
 
   .bunny-cutscene-card {
     min-height: 240px;
+  }
+
+  .bunny-cutscene-card-sprite,
+  .bunny-companion-sprite {
+    width: 96px;
+    height: 96px;
   }
 
   .bunny-companion-hud {
