@@ -115,10 +115,39 @@ function initBunnyCutscene() {
   const selectedBunnyKey = "selectedBunny";
   const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
   const mobileDialogueQuery = window.matchMedia("(max-width: 860px)");
+  const HUD_MAX_WIDTH_PX = 360;
+  const HUD_MIN_WIDTH_PX = 210;
+  const HUD_LEFT_PADDING_PX = 14;
+  const HUD_RIGHT_GUTTER_PX = 10;
   let isUserScrolling = false;
   let scrollIdleTimeout = null;
   let selectedBunny = null;
   let isMobileDialogueOpen = false;
+
+  const applyDesktopHudPosition = () => {
+    if (mobileDialogueQuery.matches) {
+      hud.style.left = "";
+      hud.style.width = "";
+      hud.style.maxWidth = "";
+      return;
+    }
+    const contentContainer = document.querySelector("body > .container.mt-5");
+    if (!contentContainer) {
+      hud.style.left = "";
+      hud.style.width = "";
+      hud.style.maxWidth = "";
+      return;
+    }
+    const containerRect = contentContainer.getBoundingClientRect();
+    const availableMarginWidth = containerRect.left - HUD_LEFT_PADDING_PX - HUD_RIGHT_GUTTER_PX;
+    const effectiveWidth = Math.max(
+      HUD_MIN_WIDTH_PX,
+      Math.min(HUD_MAX_WIDTH_PX, availableMarginWidth)
+    );
+    hud.style.left = HUD_LEFT_PADDING_PX + "px";
+    hud.style.width = effectiveWidth + "px";
+    hud.style.maxWidth = effectiveWidth + "px";
+  };
 
   const rerenderHud = () => {
     if (!selectedBunny) {
@@ -131,6 +160,7 @@ function initBunnyCutscene() {
       isMobileDialogueOpen,
       mobileDialogueQuery.matches
     );
+    applyDesktopHudPosition();
   };
 
   const storedBunny = readSelectedBunny(selectedBunnyKey);
@@ -192,6 +222,12 @@ function initBunnyCutscene() {
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("wheel", onScroll, { passive: true });
   window.addEventListener("touchmove", onScroll, { passive: true });
+  window.addEventListener("resize", () => {
+    applyDesktopHudPosition();
+  });
+  window.addEventListener("load", () => {
+    applyDesktopHudPosition();
+  });
   mobileDialogueQuery.addEventListener("change", () => {
     if (!mobileDialogueQuery.matches) {
       isMobileDialogueOpen = false;
@@ -209,6 +245,7 @@ function initBunnyCutscene() {
   });
 
   applyDefaultCardSprites();
+  applyDesktopHudPosition();
 
   bunnyCards.forEach((card) => {
     card.addEventListener("mouseenter", () => card.classList.add("sparkle-active"));
