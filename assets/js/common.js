@@ -316,15 +316,21 @@ function renderCompanionHud(hud, bunny, isUserScrolling) {
     "</div>" +
     '<div class="bunny-companion-dialogue" role="list" aria-label="Companion dialogue options">' +
     '<span class="bunny-companion-dialogue-option" role="listitem" tabindex="0">' +
+    '<span class="bunny-companion-dialogue-prefix" aria-hidden="true">&gt; </span>' +
     "Be careful! Ever since Amy is away from this site, it is dangerous out here." +
     "</span>" +
-    '<a class="bunny-companion-dialogue-option bunny-companion-dialogue-link" role="listitem" href="' +
-    escapeHtml(cvHref) +
-    '" target="_blank" rel="noopener noreferrer">' +
+    '<span class="bunny-companion-dialogue-option bunny-companion-dialogue-option-link" role="listitem" tabindex="0">' +
+    '<span class="bunny-companion-dialogue-prefix" aria-hidden="true">&gt; </span>' +
     "Want to know more about Amy's work in " +
     escapeHtml(dialogue.expertise) +
-    "? The CV on the top right shows all of Amy's experiences; click here for a shorter version!" +
+    "? The CV on the top right shows all of Amy's experiences; " +
+    '<a class="bunny-companion-dialogue-link" href="' +
+    escapeHtml(cvHref) +
+    '" target="_blank" rel="noopener noreferrer">' +
+    '<span class="bunny-companion-dialogue-click-here">click here</span>' +
     "</a>" +
+    " for a shorter version!" +
+    "</span>" +
     "</div>";
 
 }

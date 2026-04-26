@@ -262,19 +262,40 @@
   transition:
     border-color 130ms steps(2),
     background-color 130ms steps(2),
-    transform 130ms steps(2);
+    transform 130ms steps(2),
+    color 130ms steps(2);
 }
 
 .bunny-companion-dialogue-option:hover,
 .bunny-companion-dialogue-option:focus-visible {
-  border-color: #ffe082;
-  background: rgba(255, 224, 130, 0.22);
+  border-color: var(--global-theme-color);
+  background: rgba(255, 255, 255, 0.12);
   transform: translateY(-1px);
   outline: none;
 }
 
+.bunny-companion-dialogue-prefix {
+  color: #ffffff;
+}
+
 .bunny-companion-dialogue-link {
+  color: #ffffff;
+  text-decoration: none;
   cursor: pointer;
+}
+
+.bunny-companion-dialogue-click-here {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 130ms steps(2);
+}
+
+.bunny-companion-dialogue-option-link:hover .bunny-companion-dialogue-click-here,
+.bunny-companion-dialogue-option-link:focus-visible .bunny-companion-dialogue-click-here,
+.bunny-companion-dialogue-link:hover .bunny-companion-dialogue-click-here,
+.bunny-companion-dialogue-link:focus-visible .bunny-companion-dialogue-click-here {
+  color: var(--global-theme-color);
+  text-decoration: underline;
 }
 
 @keyframes bunnySparkle {
