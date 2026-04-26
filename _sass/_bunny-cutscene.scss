@@ -327,7 +327,7 @@
     border-color 130ms steps(2);
 }
 
-.bunny-companion-dialogue-cv-emphasis {
+.bunny-companion-dialogue-expertise-emphasis {
   color: #0a0a0a;
   background: #ffe082;
   border: 1px solid #ffe082;
@@ -348,10 +348,10 @@
   text-decoration: underline;
 }
 
-.bunny-companion-dialogue-option-link:hover .bunny-companion-dialogue-cv-emphasis,
-.bunny-companion-dialogue-option-link:focus-visible .bunny-companion-dialogue-cv-emphasis,
-.bunny-companion-dialogue-option:hover .bunny-companion-dialogue-cv-emphasis,
-.bunny-companion-dialogue-option:focus-visible .bunny-companion-dialogue-cv-emphasis {
+.bunny-companion-dialogue-option-link:hover .bunny-companion-dialogue-expertise-emphasis,
+.bunny-companion-dialogue-option-link:focus-visible .bunny-companion-dialogue-expertise-emphasis,
+.bunny-companion-dialogue-option:hover .bunny-companion-dialogue-expertise-emphasis,
+.bunny-companion-dialogue-option:focus-visible .bunny-companion-dialogue-expertise-emphasis {
   color: #ffffff;
   background: var(--global-theme-color);
   border-color: var(--global-theme-color);

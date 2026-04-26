@@ -403,8 +403,10 @@ function renderCompanionHud(hud, bunny, isUserScrolling, isMobileDialogueOpen, i
     '<span class="bunny-companion-dialogue-option bunny-companion-dialogue-option-link" role="listitem" tabindex="0">' +
     '<span class="bunny-companion-dialogue-prefix" aria-hidden="true">&gt; </span>' +
     "Want to know more about Amy's work in " +
+    '<span class="bunny-companion-dialogue-expertise-emphasis">' +
     escapeHtml(dialogue.expertise) +
-    '? <span class="bunny-companion-dialogue-cv-emphasis">The CV on the top right shows all of Amy\'s experiences</span>; ' +
+    "</span>" +
+    "? The CV on the top right shows all of Amy's experiences; " +
     '<a class="bunny-companion-dialogue-link" href="' +
     escapeHtml(cvHref) +
     '" target="_blank" rel="noopener noreferrer">' +
