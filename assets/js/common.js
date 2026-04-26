@@ -176,12 +176,6 @@ function renderCompanionHud(hud, bunny) {
     '<span class="bunny-companion-name">' +
     escapeHtml(bunny.name) +
     "</span>" +
-    "<span>Type: " +
-    escapeHtml(bunny.type) +
-    "</span>" +
-    "<span>Sprite: " +
-    escapeHtml(bunny.type) +
-    " spritesheet</span>" +
     "</span>";
 }
 
