@@ -115,7 +115,7 @@ function initBunnyCutscene() {
   const selectedBunnyKey = "selectedBunny";
   const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
   const mobileDialogueQuery = window.matchMedia("(max-width: 860px)");
-  const HUD_MAX_WIDTH_PX = 360;
+  const HUD_MAX_WIDTH_PX = 280;
   const HUD_MIN_WIDTH_PX = 210;
   const HUD_LEFT_PADDING_PX = 14;
   const HUD_RIGHT_GUTTER_PX = 10;
@@ -404,7 +404,7 @@ function renderCompanionHud(hud, bunny, isUserScrolling, isMobileDialogueOpen, i
     '<span class="bunny-companion-dialogue-prefix" aria-hidden="true">&gt; </span>' +
     "Want to know more about Amy's work in " +
     escapeHtml(dialogue.expertise) +
-    "? The CV on the top right shows all of Amy's experiences; " +
+    '? <span class="bunny-companion-dialogue-cv-emphasis">The CV on the top right shows all of Amy\'s experiences</span>; ' +
     '<a class="bunny-companion-dialogue-link" href="' +
     escapeHtml(cvHref) +
     '" target="_blank" rel="noopener noreferrer">' +

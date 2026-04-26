@@ -188,7 +188,7 @@
   align-items: stretch;
   gap: 0.75rem;
   width: calc(100vw - 1.8rem);
-  max-width: 360px;
+  max-width: 280px;
   min-width: 210px;
   padding: 0.65rem;
   border: 3px solid #ffffff;
@@ -316,17 +316,45 @@
 }
 
 .bunny-companion-dialogue-click-here {
-  color: #ffffff;
+  color: #0a0a0a;
+  background: #ffe082;
+  border: 1px solid #ffe082;
+  padding: 0.02rem 0.14rem;
   text-decoration: none;
-  transition: color 130ms steps(2);
+  transition:
+    color 130ms steps(2),
+    background-color 130ms steps(2),
+    border-color 130ms steps(2);
+}
+
+.bunny-companion-dialogue-cv-emphasis {
+  color: #0a0a0a;
+  background: #ffe082;
+  border: 1px solid #ffe082;
+  padding: 0.02rem 0.14rem;
+  transition:
+    color 130ms steps(2),
+    background-color 130ms steps(2),
+    border-color 130ms steps(2);
 }
 
 .bunny-companion-dialogue-option-link:hover .bunny-companion-dialogue-click-here,
 .bunny-companion-dialogue-option-link:focus-visible .bunny-companion-dialogue-click-here,
 .bunny-companion-dialogue-link:hover .bunny-companion-dialogue-click-here,
 .bunny-companion-dialogue-link:focus-visible .bunny-companion-dialogue-click-here {
-  color: var(--global-theme-color);
+  color: #ffffff;
+  background: var(--global-theme-color);
+  border-color: var(--global-theme-color);
   text-decoration: underline;
+}
+
+.bunny-companion-dialogue-option-link:hover .bunny-companion-dialogue-cv-emphasis,
+.bunny-companion-dialogue-option-link:focus-visible .bunny-companion-dialogue-cv-emphasis,
+.bunny-companion-dialogue-option:hover .bunny-companion-dialogue-cv-emphasis,
+.bunny-companion-dialogue-option:focus-visible .bunny-companion-dialogue-cv-emphasis {
+  color: #ffffff;
+  background: var(--global-theme-color);
+  border-color: var(--global-theme-color);
 }
 
 @keyframes bunnySparkle {
@@ -376,7 +404,7 @@
   .bunny-companion-hud {
     bottom: 4.8rem;
     width: calc(100vw - 1.8rem);
-    max-width: 360px;
+    max-width: 280px;
     gap: 0.55rem;
   }
 
