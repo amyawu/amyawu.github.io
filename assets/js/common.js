@@ -138,7 +138,7 @@ function initBunnyCutscene() {
 
   const applyDefaultCardSprites = () => {
     bunnyCards.forEach((card) => {
-      updateCutsceneCardSprite(card, isTouchDevice ? "active" : "idle");
+      updateCutsceneCardSprite(card, "idle");
     });
   };
 
