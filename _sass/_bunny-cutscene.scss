@@ -367,9 +367,9 @@
 .bunny-companion-cv-panel {
   position: fixed;
   right: 0.9rem;
-  bottom: 4.25rem;
+  bottom: calc(#{$back-to-top-bottom} + #{$back-to-top-diameter} + 0.5rem);
   z-index: 1000;
-  width: 260px;
+  width: 240px;
   max-width: calc(100vw - 1.8rem);
   padding: 0.7rem;
   border: 3px solid #ffffff;
