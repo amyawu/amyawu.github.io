@@ -418,7 +418,7 @@ function renderCompanionHud(
       "</span>" +
       "? " +
       '<span class="bunny-companion-dialogue-click-here">Click here</span>' +
-      " for more" +
+      " for more!" +
       "</button>";
   const cvPanelMarkup =
     !isMobileViewport && isCvPanelOpen
