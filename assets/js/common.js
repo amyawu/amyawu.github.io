@@ -205,6 +205,29 @@ function initBunnyCutscene() {
   });
 
   skipButton.addEventListener("click", () => {
+    if (!selectedBunny) {
+      const noraCard = bunnyCards.find(
+        (card) => getBunnyKey(card.dataset.bunnyName || "") === "nora"
+      );
+      const bunnyName = (noraCard && noraCard.dataset.bunnyName) || "Nora";
+      const bunnyKey = getBunnyKey(bunnyName);
+      const spriteUrls = getSpriteUrls(bunnyKey);
+      const fallbackEmoji = (noraCard && noraCard.dataset.bunnyEmoji) || "🐇";
+      const fallbackType = (noraCard && noraCard.dataset.bunnyType) || "Normal";
+      selectedBunny = {
+        name: bunnyName,
+        type: fallbackType,
+        emoji: fallbackEmoji,
+        spriteKey: bunnyKey,
+        spriteUrl: spriteUrls.active || "",
+        spriteUrlActive: spriteUrls.active || "",
+        spriteUrlIdle: spriteUrls.idle || "",
+        spriteType: "animated",
+      };
+      localStorage.setItem(selectedBunnyKey, JSON.stringify(selectedBunny));
+      renderCompanionHud(hud, selectedBunny, isUserScrolling);
+      hud.classList.remove("bunny-cutscene-hidden");
+    }
     localStorage.setItem(cutsceneSeenKey, "true");
     hideCutscene(cutscene);
   });
