@@ -157,26 +157,34 @@ function readSelectedBunny(storageKey) {
 function renderCompanionHud(hud, bunny) {
   const bunnyKey = bunny.spriteKey || getBunnyKey(bunny.name || "");
   const bunnySpriteUrl = bunny.spriteUrl || BUNNY_SPRITE_MAP[bunnyKey] || "";
-  const spriteNode = bunnySpriteUrl
-    ? '<img class="bunny-companion-sprite" src="' +
-      bunnySpriteUrl +
-      '" alt="' +
-      escapeHtml(bunny.name) +
-      ' running animation">'
-    : '<span class="bunny-companion-sprite is-fallback" aria-hidden="true">' + escapeHtml(bunny.emoji || "🐰") + "</span>";
+  const spriteClasses = bunnySpriteUrl
+    ? "bunny-companion-sprite is-animated"
+    : "bunny-companion-sprite is-fallback";
+  const spriteStyle = bunnySpriteUrl
+    ? ' style="--bunny-sprite-url: url(\'' + bunnySpriteUrl + '\');"'
+    : "";
+  const spriteContent = bunnySpriteUrl ? "" : escapeHtml(bunny.emoji || "🐰");
 
   hud.innerHTML =
-    spriteNode +
+    '<span class="' +
+    spriteClasses +
+    '" aria-hidden="true"' +
+    spriteStyle +
+    ">" +
+    spriteContent +
+    "</span>" +
     '<span class="bunny-companion-text">' +
     '<span class="bunny-companion-name">' +
     escapeHtml(bunny.name) +
     "</span>" +
     "</span>";
+
 }
 
 function getBunnyKey(name) {
   return String(name || "").trim().toLowerCase();
 }
+
 
 function trackBunnySelection(bunny) {
   if (typeof window.gtag !== "function") {
