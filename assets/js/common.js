@@ -115,7 +115,7 @@ function initBunnyCutscene() {
   const selectedBunnyKey = "selectedBunny";
   const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
   const mobileDialogueQuery = window.matchMedia("(max-width: 860px)");
-  const HUD_MAX_WIDTH_PX = 280;
+  const HUD_MAX_WIDTH_PX = 240;
   const HUD_MIN_WIDTH_PX = 210;
   const HUD_LEFT_PADDING_PX = 14;
   const HUD_RIGHT_GUTTER_PX = 10;
@@ -425,7 +425,7 @@ function renderCompanionHud(
       ? '<aside class="bunny-companion-cv-panel" aria-label="CV details panel">' +
         '<button type="button" class="bunny-companion-cv-panel-close" aria-label="Close CV panel">x</button>' +
         '<h3 class="bunny-companion-cv-panel-title"><span class="bunny-companion-cv-title-emphasis">CV</span></h3>' +
-        '<p class="bunny-companion-cv-panel-copy">This CV has all of Amy\'s experiences! ' +
+        '<p class="bunny-companion-cv-panel-copy">See the highlighted "CV" above? This CV has all of Amy\'s experiences! ' +
         '<a class="bunny-companion-cv-panel-link" href="' +
         escapeHtml(cvHref) +
         '" target="_blank" rel="noopener noreferrer">Click here</a> for a shorter version!</p>' +
