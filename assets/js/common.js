@@ -79,6 +79,25 @@ const BUNNY_SPRITE_MAP = {
   },
 };
 
+const BUNNY_DIALOGUE_MAP = {
+  nora: {
+    expertise: "everything",
+    cvFile: "Amy_Wu_CV_Everything.pdf",
+  },
+  pyro: {
+    expertise: "data visualization",
+    cvFile: "Amy_Wu_CV_DataVisualization.pdf",
+  },
+  sunny: {
+    expertise: "AI for science",
+    cvFile: "Amy_Wu_CV_AIforScience.pdf",
+  },
+  aqua: {
+    expertise: "mixed methods",
+    cvFile: "Amy_Wu_CV_MixedMethods.pdf",
+  },
+};
+
 const SCROLL_IDLE_TIMEOUT_MS = 220;
 const CUTSCENE_SELECTION_FLASH_MS = 220;
 
@@ -267,9 +286,11 @@ function readSelectedBunny(storageKey) {
 function renderCompanionHud(hud, bunny, isUserScrolling) {
   const bunnyKey = bunny.spriteKey || getBunnyKey(bunny.name || "");
   const spriteUrls = getSpriteUrls(bunnyKey);
+  const dialogue = getDialogueConfig(bunnyKey);
   const activeSprite = bunny.spriteUrlActive || bunny.spriteUrl || spriteUrls.active || "";
   const idleSprite = bunny.spriteUrlIdle || spriteUrls.idle || "";
   const bunnySpriteUrl = isUserScrolling ? activeSprite : idleSprite;
+  const cvHref = "/all_CVs/" + dialogue.cvFile;
   const spriteClasses = bunnySpriteUrl
     ? "bunny-companion-sprite is-animated"
     : "bunny-companion-sprite is-fallback";
@@ -279,6 +300,7 @@ function renderCompanionHud(hud, bunny, isUserScrolling) {
   const spriteContent = bunnySpriteUrl ? "" : escapeHtml(bunny.emoji || "🐰");
 
   hud.innerHTML =
+    '<div class="bunny-companion-main">' +
     '<span class="' +
     spriteClasses +
     '" aria-hidden="true"' +
@@ -290,7 +312,20 @@ function renderCompanionHud(hud, bunny, isUserScrolling) {
     '<span class="bunny-companion-name">' +
     escapeHtml(bunny.name) +
     "</span>" +
-    "</span>";
+    "</span>" +
+    "</div>" +
+    '<div class="bunny-companion-dialogue" role="list" aria-label="Companion dialogue options">' +
+    '<span class="bunny-companion-dialogue-option" role="listitem" tabindex="0">' +
+    "Be careful! Ever since Amy is away from this site, it is dangerous out here." +
+    "</span>" +
+    '<a class="bunny-companion-dialogue-option bunny-companion-dialogue-link" role="listitem" href="' +
+    escapeHtml(cvHref) +
+    '" target="_blank" rel="noopener noreferrer">' +
+    "Want to know more about Amy's work in " +
+    escapeHtml(dialogue.expertise) +
+    "? The CV on the top right shows all of Amy's experiences; click here for a shorter version!" +
+    "</a>" +
+    "</div>";
 
 }
 
@@ -313,6 +348,15 @@ function getSpriteUrlForState(bunnyKey, state) {
 
 function getBunnyKey(name) {
   return String(name || "").trim().toLowerCase();
+}
+
+function getDialogueConfig(bunnyKey) {
+  return (
+    BUNNY_DIALOGUE_MAP[bunnyKey] || {
+      expertise: "everything",
+      cvFile: "Amy_Wu_CV_Everything.pdf",
+    }
+  );
 }
 
 
