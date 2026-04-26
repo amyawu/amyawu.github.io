@@ -114,14 +114,29 @@ function initBunnyCutscene() {
   const cutsceneSeenKey = "bunnyCutsceneSeen";
   const selectedBunnyKey = "selectedBunny";
   const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+  const mobileDialogueQuery = window.matchMedia("(max-width: 860px)");
   let isUserScrolling = false;
   let scrollIdleTimeout = null;
   let selectedBunny = null;
+  let isMobileDialogueOpen = false;
+
+  const rerenderHud = () => {
+    if (!selectedBunny) {
+      return;
+    }
+    renderCompanionHud(
+      hud,
+      selectedBunny,
+      isUserScrolling,
+      isMobileDialogueOpen,
+      mobileDialogueQuery.matches
+    );
+  };
 
   const storedBunny = readSelectedBunny(selectedBunnyKey);
   if (storedBunny) {
     selectedBunny = storedBunny;
-    renderCompanionHud(hud, storedBunny, isUserScrolling);
+    rerenderHud();
     hud.classList.remove("bunny-cutscene-hidden");
   }
 
@@ -136,7 +151,7 @@ function initBunnyCutscene() {
     if (!selectedBunny) {
       return;
     }
-    renderCompanionHud(hud, selectedBunny, isUserScrolling);
+    rerenderHud();
   };
 
   const updateCutsceneCardSprite = (card, state) => {
@@ -177,6 +192,21 @@ function initBunnyCutscene() {
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("wheel", onScroll, { passive: true });
   window.addEventListener("touchmove", onScroll, { passive: true });
+  mobileDialogueQuery.addEventListener("change", () => {
+    if (!mobileDialogueQuery.matches) {
+      isMobileDialogueOpen = false;
+    }
+    rerenderHud();
+  });
+
+  hud.addEventListener("click", (event) => {
+    const trigger = event.target.closest(".bunny-companion-dialogue-toggle");
+    if (!trigger || !selectedBunny) {
+      return;
+    }
+    isMobileDialogueOpen = !isMobileDialogueOpen;
+    rerenderHud();
+  });
 
   applyDefaultCardSprites();
 
@@ -210,8 +240,9 @@ function initBunnyCutscene() {
 
       localStorage.setItem(selectedBunnyKey, JSON.stringify(bunny));
       selectedBunny = bunny;
+      isMobileDialogueOpen = false;
       localStorage.setItem(cutsceneSeenKey, "true");
-      renderCompanionHud(hud, bunny, isUserScrolling);
+      rerenderHud();
       hud.classList.remove("bunny-cutscene-hidden");
       bunnyCards.forEach((bunnyCard) => bunnyCard.classList.remove("is-selected-confirm"));
       card.classList.add("is-selected-confirm");
@@ -244,7 +275,8 @@ function initBunnyCutscene() {
         spriteType: "animated",
       };
       localStorage.setItem(selectedBunnyKey, JSON.stringify(selectedBunny));
-      renderCompanionHud(hud, selectedBunny, isUserScrolling);
+      isMobileDialogueOpen = false;
+      rerenderHud();
       hud.classList.remove("bunny-cutscene-hidden");
     }
     localStorage.setItem(cutsceneSeenKey, "true");
@@ -283,7 +315,7 @@ function readSelectedBunny(storageKey) {
   }
 }
 
-function renderCompanionHud(hud, bunny, isUserScrolling) {
+function renderCompanionHud(hud, bunny, isUserScrolling, isMobileDialogueOpen, isMobileViewport) {
   const bunnyKey = bunny.spriteKey || getBunnyKey(bunny.name || "");
   const spriteUrls = getSpriteUrls(bunnyKey);
   const dialogue = getDialogueConfig(bunnyKey);
@@ -291,6 +323,15 @@ function renderCompanionHud(hud, bunny, isUserScrolling) {
   const idleSprite = bunny.spriteUrlIdle || spriteUrls.idle || "";
   const bunnySpriteUrl = isUserScrolling ? activeSprite : idleSprite;
   const cvHref = "/all_CVs/" + dialogue.cvFile;
+  const isDialogueVisible = !isMobileViewport || isMobileDialogueOpen;
+  const dialogueClass = isDialogueVisible
+    ? "bunny-companion-dialogue"
+    : "bunny-companion-dialogue bunny-companion-dialogue-collapsed";
+  const dialogueToggleMarkup = isMobileViewport
+    ? '<button type="button" class="bunny-companion-dialogue-toggle" aria-expanded="' +
+      (isMobileDialogueOpen ? "true" : "false") +
+      '">click me for dialogue!</button>'
+    : "";
   const spriteClasses = bunnySpriteUrl
     ? "bunny-companion-sprite is-animated"
     : "bunny-companion-sprite is-fallback";
@@ -314,7 +355,10 @@ function renderCompanionHud(hud, bunny, isUserScrolling) {
     "</span>" +
     "</span>" +
     "</div>" +
-    '<div class="bunny-companion-dialogue" role="list" aria-label="Companion dialogue options">' +
+    dialogueToggleMarkup +
+    '<div class="' +
+    dialogueClass +
+    '" role="list" aria-label="Companion dialogue options">' +
     '<span class="bunny-companion-dialogue-option" role="listitem" tabindex="0">' +
     '<span class="bunny-companion-dialogue-prefix" aria-hidden="true">&gt; </span>' +
     "Be careful! Ever since Amy is away from this site, it is dangerous out here." +
