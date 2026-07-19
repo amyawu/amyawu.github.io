@@ -18,24 +18,17 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "All of these were fun and filled with lightbulb moments!",
+          description: "My latest contributions at Berkeley Lab&#39;s Advanced Light Source.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          description: "A curated snapshot — the full CV lives in the PDF (top-right).",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
-          },
-        },{id: "nav-teaching",
-          title: "teaching",
-          description: "the following courses",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/teaching/";
           },
         },{id: "post-a-post-with-plotly-js",
         
@@ -450,42 +443,13 @@ ninja.data = [{
           section: "News",},{id: "news-accepted-a-spring-2026-internship-at-berkeley-lab-party",
           title: 'Accepted a Spring 2026 internship at Berkeley Lab! :party:',
           description: "",
-          section: "News",},{id: "projects-prompt-analysis",
-          title: 'Prompt Analysis',
-          description: "2022",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/promptanalysis/";
-            },},{id: "projects-photography",
-          title: 'Photography',
-          description: "Candids &amp; Edits (Hover + Click)",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/photography/";
-            },},{id: "projects-gutss",
-          title: 'GUTSS',
-          description: "2023-2025",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/GUTSS/";
-            },},{id: "projects-lithoreality",
-          title: 'LithoReality',
-          description: "2023-2024",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/lithoreality/";
-            },},{id: "projects-cs-dungeon",
-          title: 'CS Dungeon',
-          description: "2022-2023",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/csdungeon/";
-            },},{id: "projects-tokenprobe",
-          title: 'TokenProbe',
-          description: "2024",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/tokenprobe/";
-            },},{id: "projects-mixtec-codices",
-          title: 'Mixtec Codices',
-          description: "2023",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/mixteccodices/";
-            },},{
+          section: "News",},{id: "news-selected-for-berkeley-lab-s-deep-learning-for-science-summer-school-brain-top-35-worldwide",
+          title: 'Selected for Berkeley Lab’s Deep Learning for Science Summer School :brain: (top 35%...',
+          description: "",
+          section: "News",},{id: "news-started-as-a-research-intern-at-the-advanced-light-source-building-3d-magnetic-models-amp-amp-digital-twins-for-als-u-magnet",
+          title: 'Started as a research intern at the Advanced Light Source — building 3D...',
+          description: "",
+          section: "News",},{
         id: 'social-linkedin',
         title: 'LinkedIn',
         section: 'Socials',
