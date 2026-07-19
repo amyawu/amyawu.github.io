@@ -1,4 +1,5 @@
 ---
+published: false
 layout: page
 title: GUTSS
 description: 2023-2025

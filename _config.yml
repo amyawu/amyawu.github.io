@@ -9,7 +9,8 @@ last_name: Wu
 contact_note: >
   Reach me on LinkedIn!
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  If you see this, hello! Welcome to my site!
+  Amy Wu — building AI for accelerated scientific discovery: autonomous systems for
+  experimental design and scientific workflows at Berkeley Lab's Advanced Light Source.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -264,8 +265,8 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Wu]
+  first_name: [Amy, A.]
 
   style: apa
   locale: en

@@ -2,16 +2,16 @@
 layout: about
 title: about
 permalink: /
-subtitle: CS graduate in HCI/AI from the <a href='https://www.ufl.edu/'>University of Florida</a>
+subtitle: AI for accelerated scientific discovery @ <a href='https://als.lbl.gov/'>Berkeley Lab</a> · <em>accelerating magnets since ’26</em>
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Feel free to reach out!</p>
+    <p>Let's talk!</p>
     <p>amywu1570[at]outlook[dot]com</p>
-    <p>Latest pitstop: Miami, FL</p>
+    <p>Latest pitstop: Berkeley, CA</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -27,23 +27,13 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I recently received my B.S. with Honors in Computer Science and a minor in Digital Arts and Sciences from the University of Florida.
+I build **AI for accelerated scientific discovery** — autonomous systems for experimental design and scientific workflows at national user facilities.
 
-I was respectively advised by [Dr. Jeremy A. Magruder Waisome](https://www.jeremywaisome.com/) and [Dr. Christan Grant](https://ceg.me/) in [UF PRISEM Lab](https://faculty.eng.ufl.edu/prisem/) and [UF Data Studio](https://ufdatastudio.com/).
+Right now I'm a research intern at the [Advanced Light Source](https://als.lbl.gov/) at [Berkeley Lab](https://www.lbl.gov/), where I build 3D magnetic models and digital twins for the [ALS-U upgrade](https://als.lbl.gov/als-u/overview/) and evaluate large language models and [agentic AI](https://doi.org/10.1080/08940886.2026.2649097) for accelerator operations.
 
-Throughout my undergraduate years, I have had the wonderful opportunity to work alongside:
+I earned my B.S. with Honors in Computer Science (minor in Digital Arts & Sciences) from the [University of Florida](https://www.ufl.edu/) in 2025, advised by [Dr. Christan Grant](https://ceg.me/) ([UF Data Studio](https://ufdatastudio.com/)) and [Dr. Jeremy A. Magruder Waisome](https://www.jeremywaisome.com/) ([PRISEM Lab](https://faculty.eng.ufl.edu/prisem/)). Along the way I've researched across labs and universities — [Argonne](https://www.anl.gov/), [Columbia / Amazon](https://www.engineering.columbia.edu/), [RWTH Aachen](https://www.rwth-aachen.de/), and [Dartmouth](https://rlab.cs.dartmouth.edu/albertoq/) — spanning **large language models**, **computer vision**, **materials ML**, and **mixed-methods CS-education** research.
 
-- [Dr. Yue Li](https://uk.linkedin.com/in/yue-li-502727133) and [Dr. Aikaterini Vriza](https://www.linkedin.com/in/katerina-vriza) at [ANL](https://www.anl.gov/) [DOE SULI](https://science.osti.gov/wdts/suli)
-- [Dr. Vishal Misra](https://www.linkedin.com/in/vishalmisra) at [CU-Amazon SURE](https://www.engineering.columbia.edu/about/news/igniting-future-engineers-summer-research-and-professional-development)
-- [Dr. Stefan Schiffer](https://kbsg.rwth-aachen.de/~schiffer/) at [RWTH Aachen University UROP International](https://www.rwth-aachen.de/cms/root/studium/im-studium/angebote-fuer-studierende/urop/~wmy/urop-international/?lidx=1)
-- [Dr. Alberto Quattrini Li](https://rlab.cs.dartmouth.edu/albertoq/) at [Dartmouth College vASURE](https://graduate.dartmouth.edu/diversity/research-and-education/asure) & [Leadership Alliance SR-EIP](https://theleadershipalliance.org/summer-research-early-identification-program)
-- [Dr. Jeremiah Blanchard](https://www.linkedin.com/in/jeremiahblanchard) under [UF USP](https://cur.aa.ufl.edu/programs-university-scholars-program/) and [UF ESP](https://cur.aa.ufl.edu/emerging-scholars-program/)
-
-Although my emerging interests are in `Human-Computer Interaction (HCI)` and `Artificial Intelligence (AI)`, I am currently **open** to exploring **all opportunities**.
-
-My primary areas are also in thematic analysis in `CS Education` and algorithmic design for `Machine Learning`, `Computer Vision`, and `Large Language Models`.
-
-**I am delighted to announce that I am an incoming DOE SULI intern at Berkeley Lab this upcoming January!**
+I'm now applying to **PhD programs** in AI. If any of this resonates, [I'd love to hear from you](mailto:amywu1570@outlook.com).
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 

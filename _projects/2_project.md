@@ -1,4 +1,5 @@
 ---
+published: false
 layout: page
 title: LithoReality
 description: 2023-2024
