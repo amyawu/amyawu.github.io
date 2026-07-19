@@ -1,11 +1,12 @@
 /**
- * Magnetic field background.
+ * Magnetic field background — undulator.
  *
  * Renders a dense grid of short line segments ("iron filings") that orient
- * along the field of a bar magnet: one fixed north pole and one fixed south
- * pole on the page. The cursor acts as a third, roaming pole, so moving it
- * bends the field lines around it like iron filings around a magnet. Filings
- * grow brighter and longer where the field is strong (near the poles).
+ * along the field of an undulator: a horizontal row of alternating poles
+ * (N-S-N-S-…) across the page, like the magnet array that wiggles a particle
+ * beam in a synchrotron. The result is a repeating chain of field-line loops.
+ * The cursor acts as an extra roaming pole, locally bending the lattice.
+ * Filings grow brighter and longer where the field is strong (near the poles).
  *
  * The canvas is injected as the first child of <body> and sits at z-index -1,
  * so it stays in the background while page content renders on top. Colors are
@@ -20,28 +21,28 @@
   var CONFIG = {
     spacing: 26, // grid spacing between filings (px) — smaller = many more filings
     jitter: 0.22, // fraction of spacing used to randomize home positions
-    segLen: 13, // base filing length (px)
-    extraLen: 11, // additional length where the field is strong
-    lineWidth: 1.1,
-    baseAlpha: 0.22, // opacity far from any pole
-    maxAlpha: 0.72, // opacity right next to a pole
-    halfSat: 1.6, // field magnitude at which brightness is half-saturated
+    segLen: 15, // base filing length (px)
+    extraLen: 12, // additional length where the field is strong
+    lineWidth: 1.6,
+    baseAlpha: 1.0, // opacity far from any pole
+    maxAlpha: 1.0, // opacity right next to a pole
+    halfSat: 1.1, // field magnitude at which brightness is half-saturated
     ease: 0.18, // how quickly a filing turns toward the field direction
+    // Undulator lattice: a horizontal row of alternating poles.
+    period: 150, // spacing between consecutive poles (px) = half the wiggle wavelength
+    axisYFrac: 0.5, // vertical position of the beam axis (fraction of viewport height)
     // Pole strengths (in px^2; field magnitude ~ strength / distance^2).
     sitePole: 26000,
     cursorPole: 46000,
-    // Gentle "breathing" of the fixed poles so the field feels alive at rest.
-    bobAmp: 12,
-    bobSpeed: 0.00035,
-    glowAlpha: 0.05, // faint halo drawn at each pole
-    glowRadius: 130,
-    contentWidth: 930, // matches $max-content-width; poles sit outside this column
+    // Gentle vertical "breathing" of the whole axis so the field feels alive at rest.
+    bobAmp: 8,
+    bobSpeed: 0.0003,
+    glowAlpha: 0.06, // faint halo drawn at each pole
+    glowRadius: 95,
   };
 
   var canvas, ctx, dpr, w, h;
   var particles = [];
-  var poleN = { x: 0, y: 0 }; // fixed north pole (base position)
-  var poleS = { x: 0, y: 0 }; // fixed south pole (base position)
   var mouseX = -9999,
     mouseY = -9999,
     mouseActive = false;
@@ -76,17 +77,23 @@
     if (rgb) strokeRgb = rgb;
   }
 
-  function computePoleBases() {
-    // Keep the poles out of the centered content column (max 930px wide) by
-    // seating them in the side gutters, one per side. On narrow screens with no
-    // gutter they fall back to just inside the screen edges.
-    var contentW = Math.min(CONFIG.contentWidth, w);
-    var leftEdge = (w - contentW) / 2; // == left gutter width
-    var rightEdge = w - leftEdge;
-    poleN.x = Math.max(24, leftEdge / 2); // middle of the left gutter
-    poleN.y = h * 0.4;
-    poleS.x = Math.min(w - 24, (rightEdge + w) / 2); // middle of the right gutter
-    poleS.y = h * 0.6;
+  // The fixed undulator poles at time `now`: a centered row of alternating
+  // N/S poles spaced `period` apart, gently bobbing up and down as one.
+  function undulatorPoles(now) {
+    var poles = [];
+    var period = CONFIG.period;
+    var count = Math.max(2, Math.floor(w / period) + 1);
+    var span = (count - 1) * period;
+    var startX = (w - span) / 2; // center the array horizontally
+    var axisY = h * CONFIG.axisYFrac + Math.sin(now * CONFIG.bobSpeed) * CONFIG.bobAmp;
+    for (var i = 0; i < count; i++) {
+      poles.push({
+        x: startX + i * period,
+        y: axisY,
+        q: (i % 2 === 0 ? 1 : -1) * CONFIG.sitePole,
+      });
+    }
+    return poles;
   }
 
   function resize() {
@@ -100,7 +107,6 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.lineWidth = CONFIG.lineWidth;
     ctx.lineCap = "round";
-    computePoleBases();
     buildParticles();
   }
 
@@ -108,10 +114,7 @@
     particles = [];
     var s = CONFIG.spacing;
     var j = s * CONFIG.jitter;
-    var poles = [
-      { x: poleN.x, y: poleN.y, q: CONFIG.sitePole },
-      { x: poleS.x, y: poleS.y, q: -CONFIG.sitePole },
-    ];
+    var poles = undulatorPoles(0);
     for (var y = s / 2; y < h + s; y += s) {
       for (var x = s / 2; x < w + s; x += s) {
         // Deterministic pseudo-random jitter for an organic (non-gridded) look.
@@ -186,11 +189,7 @@
   }
 
   function currentPoles(now) {
-    var bob = Math.sin(now * CONFIG.bobSpeed) * CONFIG.bobAmp;
-    var poles = [
-      { x: poleN.x, y: poleN.y + bob, q: CONFIG.sitePole },
-      { x: poleS.x, y: poleS.y - bob, q: -CONFIG.sitePole },
-    ];
+    var poles = undulatorPoles(now);
     if (mouseActive) {
       poles.push({ x: mouseX, y: mouseY, q: CONFIG.cursorPole });
     }
@@ -201,10 +200,10 @@
     var poles = currentPoles(now);
     paintBackground();
 
-    // Faint halos so the magnet's poles read as poles.
-    drawGlow(poles[0].x, poles[0].y);
-    drawGlow(poles[1].x, poles[1].y);
-    if (poles.length > 2) drawGlow(poles[2].x, poles[2].y);
+    // Faint halos so each pole in the array reads as a pole.
+    for (var g = 0; g < poles.length; g++) {
+      drawGlow(poles[g].x, poles[g].y);
+    }
 
     var span = CONFIG.maxAlpha - CONFIG.baseAlpha;
     for (var i = 0; i < particles.length; i++) {
