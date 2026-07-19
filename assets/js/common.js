@@ -57,7 +57,8 @@ $(document).ready(function () {
     trigger: "hover",
   });
 
-  initBunnyCutscene();
+  // Bunny companion disabled — see magnetic-field.js for the current background.
+  // initBunnyCutscene();
 });
 
 const BUNNY_SPRITE_MAP = {
