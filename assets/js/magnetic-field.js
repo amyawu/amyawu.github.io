@@ -24,13 +24,14 @@
     segLen: 15, // base filing length (px)
     extraLen: 12, // additional length where the field is strong
     lineWidth: 1.6,
-    baseAlpha: 1.0, // opacity far from any pole
-    maxAlpha: 1.0, // opacity right next to a pole
+    baseAlpha: 0.6, // opacity far from any pole
+    maxAlpha: 0.6, // opacity right next to a pole
     halfSat: 1.1, // field magnitude at which brightness is half-saturated
     ease: 0.18, // how quickly a filing turns toward the field direction
     // Undulator lattice: a horizontal row of alternating poles.
     period: 150, // spacing between consecutive poles (px) = half the wiggle wavelength
     axisYFrac: 0.5, // vertical position of the beam axis (fraction of viewport height)
+    driftSpeed: 0.035, // px/ms the lattice travels along its axis (undulator "in action")
     // Pole strengths (in px^2; field magnitude ~ strength / distance^2).
     sitePole: 26000,
     cursorPole: 46000,
@@ -77,21 +78,26 @@
     if (rgb) strokeRgb = rgb;
   }
 
-  // The fixed undulator poles at time `now`: a centered row of alternating
-  // N/S poles spaced `period` apart, gently bobbing up and down as one.
+  // The undulator poles at time `now`: a row of alternating N/S poles spaced
+  // `period` apart that travels longitudinally along its axis (the classic
+  // undulator field in motion), gently bobbing up and down as one. The lattice
+  // is drifted and wrapped by a full N-S cycle (2*period) so the alternating
+  // polarity stays continuous and the row is always seamless off both edges.
   function undulatorPoles(now) {
     var poles = [];
     var period = CONFIG.period;
-    var count = Math.max(2, Math.floor(w / period) + 1);
-    var span = (count - 1) * period;
-    var startX = (w - span) / 2; // center the array horizontally
+    var cycle = period * 2; // one full N-S-N cycle
+    var drift = (((now * CONFIG.driftSpeed) % cycle) + cycle) % cycle;
+    var startX = -cycle + drift; // start a cycle off-screen left so it stays covered
     var axisY = h * CONFIG.axisYFrac + Math.sin(now * CONFIG.bobSpeed) * CONFIG.bobAmp;
-    for (var i = 0; i < count; i++) {
+    var i = 0;
+    for (var x = startX; x < w + period; x += period) {
       poles.push({
-        x: startX + i * period,
+        x: x,
         y: axisY,
         q: (i % 2 === 0 ? 1 : -1) * CONFIG.sitePole,
       });
+      i++;
     }
     return poles;
   }
