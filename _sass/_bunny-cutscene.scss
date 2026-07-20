@@ -226,11 +226,7 @@
 }
 
 .bunny-companion-sprite.is-fallback {
-  background: repeating-linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.09) 0 6px,
-    rgba(255, 255, 255, 0.16) 6px 12px
-  );
+  background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.09) 0 6px, rgba(255, 255, 255, 0.16) 6px 12px);
 }
 
 .bunny-companion-text {

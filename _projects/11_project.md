@@ -193,7 +193,6 @@ permalink: /projects/photography/
 
 </div>
 
-
 <div id="imageModal" class="modal">
   <span class="close" onclick="closeModal()">&times;</span>
   <div class="modal-content">
@@ -211,7 +210,6 @@ permalink: /projects/photography/
     </div>
   </div>
 </div>
-
 
 <style>
 .instagram-grid {
@@ -333,7 +331,6 @@ permalink: /projects/photography/
   .comparison-row { flex-direction: column; }
 }
 </style>
-
 
 <script>
 function openModal(el) {

@@ -53,7 +53,9 @@
   var running = false;
 
   function hexToRgb(hex) {
-    var m = String(hex || "").trim().replace("#", "");
+    var m = String(hex || "")
+      .trim()
+      .replace("#", "");
     if (m.length === 3) {
       var r3 = parseInt(m[0] + m[0], 16),
         g3 = parseInt(m[1] + m[1], 16),
@@ -247,8 +249,7 @@
 
   function init() {
     if (document.getElementById("magnetic-field-canvas")) return;
-    reduceMotion =
-      window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     canvas = document.createElement("canvas");
     canvas.id = "magnetic-field-canvas";

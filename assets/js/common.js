@@ -142,10 +142,7 @@ function initBunnyCutscene() {
     }
     const containerRect = contentContainer.getBoundingClientRect();
     const availableMarginWidth = containerRect.left - HUD_LEFT_PADDING_PX - HUD_RIGHT_GUTTER_PX;
-    const effectiveWidth = Math.max(
-      HUD_MIN_WIDTH_PX,
-      Math.min(HUD_MAX_WIDTH_PX, availableMarginWidth)
-    );
+    const effectiveWidth = Math.max(HUD_MIN_WIDTH_PX, Math.min(HUD_MAX_WIDTH_PX, availableMarginWidth));
     hud.style.left = HUD_LEFT_PADDING_PX + "px";
     hud.style.width = effectiveWidth + "px";
     hud.style.maxWidth = effectiveWidth + "px";
@@ -156,14 +153,7 @@ function initBunnyCutscene() {
       return;
     }
     setTopNavCvHighlight(isCvPanelOpen && !mobileDialogueQuery.matches);
-    renderCompanionHud(
-      hud,
-      selectedBunny,
-      isUserScrolling,
-      isMobileDialogueOpen,
-      mobileDialogueQuery.matches,
-      isCvPanelOpen
-    );
+    renderCompanionHud(hud, selectedBunny, isUserScrolling, isMobileDialogueOpen, mobileDialogueQuery.matches, isCvPanelOpen);
     applyDesktopHudPosition();
   };
 
@@ -312,9 +302,7 @@ function initBunnyCutscene() {
 
   skipButton.addEventListener("click", () => {
     if (!selectedBunny) {
-      const noraCard = bunnyCards.find(
-        (card) => getBunnyKey(card.dataset.bunnyName || "") === "nora"
-      );
+      const noraCard = bunnyCards.find((card) => getBunnyKey(card.dataset.bunnyName || "") === "nora");
       const bunnyName = (noraCard && noraCard.dataset.bunnyName) || "Nora";
       const bunnyKey = getBunnyKey(bunnyName);
       const spriteUrls = getSpriteUrls(bunnyKey);
@@ -339,7 +327,6 @@ function initBunnyCutscene() {
     localStorage.setItem(cutsceneSeenKey, "true");
     hideCutscene(cutscene);
   });
-
 }
 
 function showCutscene(cutscene) {
@@ -372,14 +359,7 @@ function readSelectedBunny(storageKey) {
   }
 }
 
-function renderCompanionHud(
-  hud,
-  bunny,
-  isUserScrolling,
-  isMobileDialogueOpen,
-  isMobileViewport,
-  isCvPanelOpen
-) {
+function renderCompanionHud(hud, bunny, isUserScrolling, isMobileDialogueOpen, isMobileViewport, isCvPanelOpen) {
   const bunnyKey = bunny.spriteKey || getBunnyKey(bunny.name || "");
   const spriteUrls = getSpriteUrls(bunnyKey);
   const dialogue = getDialogueConfig(bunnyKey);
@@ -388,9 +368,7 @@ function renderCompanionHud(
   const bunnySpriteUrl = isUserScrolling ? activeSprite : idleSprite;
   const cvHref = "/all_CVs/" + dialogue.cvFile;
   const isDialogueVisible = !isMobileViewport || isMobileDialogueOpen;
-  const dialogueClass = isDialogueVisible
-    ? "bunny-companion-dialogue"
-    : "bunny-companion-dialogue bunny-companion-dialogue-collapsed";
+  const dialogueClass = isDialogueVisible ? "bunny-companion-dialogue" : "bunny-companion-dialogue bunny-companion-dialogue-collapsed";
   const dialogueToggleMarkup = isMobileViewport
     ? '<button type="button" class="bunny-companion-dialogue-toggle" aria-expanded="' +
       (isMobileDialogueOpen ? "true" : "false") +
@@ -431,12 +409,8 @@ function renderCompanionHud(
         '" target="_blank" rel="noopener noreferrer">Click here</a> for a shorter version!</p>' +
         "</aside>"
       : "";
-  const spriteClasses = bunnySpriteUrl
-    ? "bunny-companion-sprite is-animated"
-    : "bunny-companion-sprite is-fallback";
-  const spriteStyle = bunnySpriteUrl
-    ? ' style="--bunny-sprite-url: url(\'' + bunnySpriteUrl + '\');"'
-    : "";
+  const spriteClasses = bunnySpriteUrl ? "bunny-companion-sprite is-animated" : "bunny-companion-sprite is-fallback";
+  const spriteStyle = bunnySpriteUrl ? " style=\"--bunny-sprite-url: url('" + bunnySpriteUrl + "');\"" : "";
   const spriteContent = bunnySpriteUrl ? "" : escapeHtml(bunny.emoji || "🐰");
 
   hud.innerHTML =
@@ -465,7 +439,6 @@ function renderCompanionHud(
     dialogueOptionTwoMarkup +
     "</div>" +
     cvPanelMarkup;
-
 }
 
 function getSpriteUrls(bunnyKey) {
@@ -486,7 +459,9 @@ function getSpriteUrlForState(bunnyKey, state) {
 }
 
 function getBunnyKey(name) {
-  return String(name || "").trim().toLowerCase();
+  return String(name || "")
+    .trim()
+    .toLowerCase();
 }
 
 function getDialogueConfig(bunnyKey) {
@@ -508,7 +483,6 @@ function setTopNavCvHighlight(isActive) {
     }
   });
 }
-
 
 function trackBunnySelection(bunny) {
   if (typeof window.gtag !== "function") {
