@@ -24,8 +24,8 @@
     segLen: 15, // base filing length (px)
     extraLen: 12, // additional length where the field is strong
     lineWidth: 1.6,
-    baseAlpha: 0.3, // opacity far from any pole
-    maxAlpha: 0.3, // opacity right next to a pole
+    baseAlpha: 0.1, // opacity far from any pole
+    maxAlpha: 0.1, // opacity right next to a pole
     halfSat: 1.1, // field magnitude at which brightness is half-saturated
     ease: 0.18, // how quickly a filing turns toward the field direction
     // Undulator lattice: a horizontal row of alternating poles.

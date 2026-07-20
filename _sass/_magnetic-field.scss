@@ -29,3 +29,23 @@ body {
   display: block;
   pointer-events: none;
 }
+
+// Rounded, bordered panel behind page content so text stays readable over the
+// magnetic-field background. The field still shows in the gutters around it.
+.post {
+  background-color: var(--global-panel-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+  // Softly blur the field behind the panel where supported.
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+@media (max-width: 576px) {
+  .post {
+    padding: 1.25rem 1.15rem;
+    border-radius: 12px;
+  }
+}
