@@ -94,6 +94,10 @@ jobs:
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
           bundle exec jekyll build
+          # Mark the built output as static so GitHub Pages serves it as-is and
+          # does NOT re-run its native Jekyll build on the gh-pages branch
+          # (that second build fails on the already-processed _site output).
+          touch _site/.nojekyll
       - name: Purge unused CSS 🧹
         run: |
           npm install -g purgecss
