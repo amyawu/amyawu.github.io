@@ -62,11 +62,23 @@ search: false
     <li><strong>PV name prediction:</strong> the model names the channel(s) for a query, with or without hints.</li>
     <li><strong>Token graph reconstruction:</strong> the model works out how naming pieces fit together, drawn as a graph.</li>
   </ul>
-  <p>It runs entirely in your browser with any OpenAI-compatible API key and keeps a history of your results. It comes with a made-up example dataset, or you can load your own.</p>
+  <p>It runs entirely in your browser with your own API key (OpenAI, Anthropic, Google, Mistral and more) and keeps a history of your results. It comes with a made-up example dataset, or you can load your own.</p>
   <div class="actions">
     <a class="btn-open" href="https://amyawu.github.io/als-language-model-evaluation/">Open EMU</a>
     <a href="https://indico.jacow.org/event/95/contributions/12471/attachments/1330/8600/MOP6321_edited_version.pdf">Paper</a>
     <a href="https://github.com/amyawu/als-language-model-evaluation">Code</a>
+  </div>
+</div>
+
+<div class="demo-card">
+  <div class="head">
+    <h3>TokenProbe <span class="expansion">Visualizing LLM learning in real time</span></h3>
+    <span class="meta">Columbia University · 2024</span>
+  </div>
+  <p>Watch a language model learn from the examples in its prompt. TokenProbe shows how the model&rsquo;s token probabilities shift, example by example, as it picks up a pattern in context.</p>
+  <p>Built in Dr. Vishal Misra&rsquo;s DNA Lab at Columbia with Charlie Kerfoot, Rashfique Rahman and Andrew Tang, as part of the Amazon Summer Undergraduate Research Experience (SURE).</p>
+  <div class="actions">
+    <a class="btn-open" href="https://tokenprobe.cs.columbia.edu/">Open TokenProbe</a>
   </div>
 </div>
 
