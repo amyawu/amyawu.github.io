@@ -33,6 +33,8 @@ search: false
     font-size: 0.82rem;
     white-space: nowrap;
   }
+  .demo-card h3 .expansion { display: block; font-size: 0.85rem; font-weight: 300; margin-top: 0.15rem; }
+  .demo-card h3 .expansion b { color: var(--global-theme-color); font-weight: 700; }
   .demo-card p { font-weight: 300; margin: 0.6rem 0 0; }
   .demo-card ul { font-weight: 300; margin: 0.5rem 0 0; padding-left: 1.2rem; }
   .demo-card .actions { display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; align-items: center; margin-top: 0.9rem; }
@@ -52,7 +54,7 @@ search: false
 
 <div class="demo-card">
   <div class="head">
-    <h3>EPICS PV Benchmark</h3>
+    <h3>EMU <span class="expansion">languag<b>E</b> <b>M</b>odel eval<b>U</b>ation</span></h3>
     <span class="meta">IPAC&rsquo;26 · MOP6321</span>
   </div>
   <p>Can a language model turn an operator&rsquo;s request, like &ldquo;what&rsquo;s the vacuum pressure in arc 3?&rdquo;, into the exact control-system channel name? Try the two benchmark tasks from my paper with your own model:</p>
@@ -62,7 +64,7 @@ search: false
   </ul>
   <p>It runs entirely in your browser with any OpenAI-compatible API key and keeps a history of your results. It comes with a made-up example dataset, or you can load your own.</p>
   <div class="actions">
-    <a class="btn-open" href="https://amyawu.github.io/als-language-model-evaluation/">Open the demo</a>
+    <a class="btn-open" href="https://amyawu.github.io/als-language-model-evaluation/">Open EMU</a>
     <a href="https://indico.jacow.org/event/95/contributions/12471/attachments/1330/8600/MOP6321_edited_version.pdf">Paper</a>
     <a href="https://github.com/amyawu/als-language-model-evaluation">Code</a>
   </div>
