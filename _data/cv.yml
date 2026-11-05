@@ -47,12 +47,12 @@
 - title: Research Experience
   type: time_table
   contents:
-    - title: Research Intern — 3D Magnetics &amp; Digital Twins
+    - title: Research Intern — 3D Magnetics
       institution: Advanced Light Source, Lawrence Berkeley National Laboratory
       year: 2026 – now
       location: Berkeley, CA
       description:
-        - Building 3D magnetic models of quadrupole and BendA magnets for beamline diagnostics and a digital twin for the ALS-U upgrade.
+        - Building 3D magnetic models of quadrupole and BendA magnets for beamline diagnostics, supporting the Advanced Light Source upgrade (ALS-U).
     - title: Department of Energy Intern — LLMs &amp; Agentic AI
       institution: Advanced Light Source, Lawrence Berkeley National Laboratory
       year: 2026

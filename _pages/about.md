@@ -29,7 +29,7 @@ latest_posts:
 
 I build **AI for accelerated scientific discovery** — autonomous systems for experimental design and scientific workflows at national user facilities.
 
-Right now I'm a research intern at the [Advanced Light Source](https://als.lbl.gov/) at [Berkeley Lab](https://www.lbl.gov/), where I build 3D magnetic models and digital twins for the [ALS-U upgrade](https://als.lbl.gov/als-u/overview/) and evaluate large language models and [agentic AI](https://doi.org/10.1080/08940886.2026.2649097) for accelerator operations.
+Right now I'm a research intern at the [Advanced Light Source](https://als.lbl.gov/) at [Berkeley Lab](https://www.lbl.gov/), where I build 3D magnetic models that support the [Advanced Light Source upgrade](https://als.lbl.gov/als-u/overview/) and evaluate large language models and [agentic AI](https://doi.org/10.1080/08940886.2026.2649097) for accelerator operations.
 
 I earned my B.S. with Honors in Computer Science (minor in Digital Arts & Sciences) from the [University of Florida](https://www.ufl.edu/) in 2025, advised by [Dr. Christan Grant](https://ceg.me/) ([UF Data Studio](https://ufdatastudio.com/)) and [Dr. Jeremy A. Magruder Waisome](https://www.jeremywaisome.com/) ([PRISEM Lab](https://faculty.eng.ufl.edu/prisem/)). Along the way I've researched across labs and universities — [Argonne](https://www.anl.gov/), [Columbia / Amazon](https://www.engineering.columbia.edu/), [RWTH Aachen](https://www.rwth-aachen.de/), and [Dartmouth](https://rlab.cs.dartmouth.edu/albertoq/) — spanning **large language models**, **computer vision**, **materials ML**, and **mixed-methods CS-education** research.
 

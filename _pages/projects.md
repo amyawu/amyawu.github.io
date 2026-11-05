@@ -54,11 +54,11 @@ search: false
 
 <details open>
   <summary>
-    <span class="title">3D Magnetic Modeling &amp; Digital Twins</span>
+    <span class="title">3D Magnetic Modeling</span>
     <span class="meta">Advanced Light Source · 2026–now</span>
   </summary>
   <div class="body">
-    <p>I build 3D magnetic models of the Advanced Light Source's quadrupole and BendA magnets in Radia, mapping their fields for beamline diagnostics. These models feed a digital twin supporting the <a href="https://als.lbl.gov/als-u/overview/">ALS-U upgrade</a>.</p>
+    <p>I build 3D magnetic models of the Advanced Light Source's quadrupole and BendA magnets in Radia, mapping their fields for beamline diagnostics. These models support the Advanced Light Source upgrade (<a href="https://als.lbl.gov/als-u/overview/">ALS-U</a>).</p>
   </div>
 </details>
 
