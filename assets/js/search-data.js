@@ -453,7 +453,7 @@ ninja.data = [{
           section: "News",},{id: "news-selected-for-berkeley-lab-s-deep-learning-for-science-summer-school-brain-top-35-worldwide",
           title: 'Selected for Berkeley Lab’s Deep Learning for Science Summer School :brain: (top 35%...',
           description: "",
-          section: "News",},{id: "news-started-as-a-research-intern-at-the-advanced-light-source-building-3d-magnetic-models-amp-amp-digital-twins-for-als-u-magnet",
+          section: "News",},{id: "news-started-as-a-research-intern-at-the-advanced-light-source-building-3d-magnetic-models-that-support-the-advanced-light-source-upgrade-magnet",
           title: 'Started as a research intern at the Advanced Light Source — building 3D...',
           description: "",
           section: "News",},{
